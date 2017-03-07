@@ -39457,3 +39457,379 @@ Processing by ApartamentosController#index as HTML
 Completed 200 OK in 107ms (Views: 104.4ms | ActiveRecord: 1.0ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_boletos_on_apartamento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_boletos_on_apartamento_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_encomendas_on_apartamento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_encomendas_on_apartamento_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_vagas_on_apartamento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_vagas_on_apartamento_id' AND type='index'
+[0m
+Started GET "/vagas" for 127.0.0.1 at 2017-03-06 23:42:49 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.3ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.5ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (11296.1ms)
+Completed 200 OK in 12723ms (Views: 12454.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-06 23:43:05 -0300
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.5ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 207ms (Views: 205.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-06 23:43:06 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.4ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.3ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 182ms (Views: 180.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-06 23:43:08 -0300
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.8ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 128ms (Views: 125.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-06 23:43:16 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.2ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 114ms (Views: 110.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/encomendas" for 127.0.0.1 at 2017-03-06 23:43:22 -0300
+Processing by EncomendasController#index as HTML
+  Rendering encomendas/index.html.erb within layouts/application
+  [1m[36mEncomenda Load (0.3ms)[0m  [1m[34mSELECT "encomendas".* FROM "encomendas"[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered encomendas/index.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 135ms (Views: 125.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/encomendas/2" for 127.0.0.1 at 2017-03-06 23:43:30 -0300
+Processing by EncomendasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEncomenda Load (0.3ms)[0m  [1m[34mSELECT  "encomendas".* FROM "encomendas" WHERE "encomendas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering encomendas/show.html.erb within layouts/application
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered encomendas/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 93ms (Views: 89.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/encomendas" for 127.0.0.1 at 2017-03-06 23:43:33 -0300
+Processing by EncomendasController#index as HTML
+  Rendering encomendas/index.html.erb within layouts/application
+  [1m[36mEncomenda Load (0.5ms)[0m  [1m[34mSELECT "encomendas".* FROM "encomendas"[0m
+  [1m[36mApartamento Load (0.6ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered encomendas/index.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 125ms (Views: 121.7ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/encomendas/2" for 127.0.0.1 at 2017-03-06 23:43:37 -0300
+Processing by EncomendasController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xpg3COZYznbZ/xSlUJ5qJuqnk4jmsvxzveS8EXIxOmEcgGZuK2BerlyA0CsNVvpjKiUWtj+4b4KlfgM8J58YOQ==", "id"=>"2"}
+  [1m[36mEncomenda Load (0.3ms)[0m  [1m[34mSELECT  "encomendas".* FROM "encomendas" WHERE "encomendas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "encomendas" WHERE "encomendas"."id" = ?[0m  [["id", 2]]
+  [1m[35m (113.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/encomendas
+Completed 302 Found in 121ms (ActiveRecord: 113.8ms)
+
+
+Started GET "/encomendas" for 127.0.0.1 at 2017-03-06 23:43:38 -0300
+Processing by EncomendasController#index as HTML
+  Rendering encomendas/index.html.erb within layouts/application
+  [1m[36mEncomenda Load (0.3ms)[0m  [1m[34mSELECT "encomendas".* FROM "encomendas"[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered encomendas/index.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 115ms (Views: 113.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/encomendas/3" for 127.0.0.1 at 2017-03-06 23:43:41 -0300
+Processing by EncomendasController#destroy as HTML
+  Parameters: {"authenticity_token"=>"szUZ/FlJAe8BuihbwQs2YtmNqfstaUqoyaQd81k5qr1pLUialHGRN4TF7NWcw6YnGQ8sxfRj2VnRPqLeDJeI5Q==", "id"=>"3"}
+  [1m[36mEncomenda Load (0.1ms)[0m  [1m[34mSELECT  "encomendas".* FROM "encomendas" WHERE "encomendas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "encomendas" WHERE "encomendas"."id" = ?[0m  [["id", 3]]
+  [1m[35m (151.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/encomendas
+Completed 302 Found in 155ms (ActiveRecord: 151.9ms)
+
+
+Started GET "/encomendas" for 127.0.0.1 at 2017-03-06 23:43:41 -0300
+Processing by EncomendasController#index as HTML
+  Rendering encomendas/index.html.erb within layouts/application
+  [1m[36mEncomenda Load (0.2ms)[0m  [1m[34mSELECT "encomendas".* FROM "encomendas"[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered encomendas/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 109ms (Views: 106.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/encomendas/4" for 127.0.0.1 at 2017-03-06 23:43:43 -0300
+Processing by EncomendasController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wROuQcWGcfv58sL3wl68Jmp/zEI4FAv7PaGwuFAgXD4bC/8nCL7hI3yNBnmflixjqv1JfOEemAolOw+VBY5+Zg==", "id"=>"4"}
+  [1m[36mEncomenda Load (0.2ms)[0m  [1m[34mSELECT  "encomendas".* FROM "encomendas" WHERE "encomendas"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "encomendas" WHERE "encomendas"."id" = ?[0m  [["id", 4]]
+  [1m[35m (107.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/encomendas
+Completed 302 Found in 115ms (ActiveRecord: 108.5ms)
+
+
+Started GET "/encomendas" for 127.0.0.1 at 2017-03-06 23:43:43 -0300
+Processing by EncomendasController#index as HTML
+  Rendering encomendas/index.html.erb within layouts/application
+  [1m[36mEncomenda Load (0.3ms)[0m  [1m[34mSELECT "encomendas".* FROM "encomendas"[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered encomendas/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 132ms (Views: 130.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/encomendas/5" for 127.0.0.1 at 2017-03-06 23:43:46 -0300
+Processing by EncomendasController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BWdkpyFmGc/kCZv8OOPbfyDL0hPw2wImEe3ClknHh63ffzXB7F6JF2F2X3JlK0s64ElXLSnRkdcJd327HGml9Q==", "id"=>"5"}
+  [1m[36mEncomenda Load (0.1ms)[0m  [1m[34mSELECT  "encomendas".* FROM "encomendas" WHERE "encomendas"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "encomendas" WHERE "encomendas"."id" = ?[0m  [["id", 5]]
+  [1m[35m (61.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/encomendas
+Completed 302 Found in 67ms (ActiveRecord: 61.7ms)
+
+
+Started GET "/encomendas" for 127.0.0.1 at 2017-03-06 23:43:46 -0300
+Processing by EncomendasController#index as HTML
+  Rendering encomendas/index.html.erb within layouts/application
+  [1m[36mEncomenda Load (0.2ms)[0m  [1m[34mSELECT "encomendas".* FROM "encomendas"[0m
+  Rendered encomendas/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 97ms (Views: 95.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-06 23:43:47 -0300
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.3ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 105ms (Views: 102.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/apartamentos/1/edit" for 127.0.0.1 at 2017-03-06 23:43:49 -0300
+Processing by ApartamentosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartamentos/edit.html.erb within layouts/application
+  Rendered apartamentos/_form.html.erb (55.0ms)
+  Rendered apartamentos/edit.html.erb within layouts/application (57.1ms)
+Completed 200 OK in 139ms (Views: 136.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/apartamentos/1" for 127.0.0.1 at 2017-03-06 23:44:01 -0300
+Processing by ApartamentosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YNtZALJKgo+e7IrfVZTKjhSyaLeJTHY8HtUK5OIPIrkVWTNi7rjyWlBqS2ZzbEH3OWFlX1BckbR1uuAEP5cOaQ==", "apartamento"=>{"local"=>"D 702", "nome_proprietario"=>"Joselito", "cpf_proprietario"=>"231231", "nome_morador"=>"Joselito", "senha"=>""}, "commit"=>"Atualizar Apartamento", "id"=>"1"}
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering apartamentos/edit.html.erb within layouts/application
+  Rendered apartamentos/_form.html.erb (7.3ms)
+  Rendered apartamentos/edit.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 123ms (Views: 116.4ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/apartamentos/1" for 127.0.0.1 at 2017-03-06 23:44:13 -0300
+Processing by ApartamentosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vn3dSG/tJzIsKeNIhSSJfOSzsNUIXl4poGYotiKrPtpkZYwuotW36qlWJ8bY7Bk5JDE169FUzdi4/JebdwUcgg==", "apartamento"=>{"local"=>"D 702", "nome_proprietario"=>"Jose", "cpf_proprietario"=>"231231", "nome_morador"=>"Jose", "senha"=>"123213"}, "commit"=>"Atualizar Apartamento", "id"=>"1"}
+  [1m[36mApartamento Load (0.3ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "apartamentos" SET "local" = ?, "nome_proprietario" = ?, "nome_morador" = ?, "senha" = ?, "updated_at" = ? WHERE "apartamentos"."id" = ?[0m  [["local", "D 702"], ["nome_proprietario", "Jose"], ["nome_morador", "Jose"], ["senha", "123213"], ["updated_at", 2017-03-07 02:44:13 UTC], ["id", 1]]
+  [1m[35m (141.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/apartamentos/1
+Completed 302 Found in 155ms (ActiveRecord: 142.0ms)
+
+
+Started GET "/apartamentos/1" for 127.0.0.1 at 2017-03-06 23:44:13 -0300
+Processing by ApartamentosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartamentos/show.html.erb within layouts/application
+  Rendered apartamentos/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 110ms (Views: 107.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-06 23:44:15 -0300
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 143ms (Views: 128.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/apartamentos/6/edit" for 127.0.0.1 at 2017-03-06 23:44:20 -0300
+Processing by ApartamentosController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering apartamentos/edit.html.erb within layouts/application
+  Rendered apartamentos/_form.html.erb (7.3ms)
+  Rendered apartamentos/edit.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 109ms (Views: 106.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/apartamentos/6" for 127.0.0.1 at 2017-03-06 23:44:29 -0300
+Processing by ApartamentosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gG8YofqDNhA8XOUT5stpszlIU7KYd8y8JyCzmdJFw7xemPUHYOcifGF5IGxzB2BbsVviFwgsI2bYZAVl4zCl/g==", "apartamento"=>{"local"=>"F 601", "nome_proprietario"=>"Bianca ", "cpf_proprietario"=>"1232", "nome_morador"=>"Bianca ", "senha"=>""}, "commit"=>"Atualizar Apartamento", "id"=>"6"}
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering apartamentos/edit.html.erb within layouts/application
+  Rendered apartamentos/_form.html.erb (8.5ms)
+  Rendered apartamentos/edit.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 123ms (Views: 117.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/apartamentos/6" for 127.0.0.1 at 2017-03-06 23:44:34 -0300
+Processing by ApartamentosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c6rdhNRo2FaePz+cxpt4okYglUhJ+5RXWjKBhgk5LjapsoziGVBIjhtA+xKbU+jnhqIQdpDxB6ZCqD6rXJcMbg==", "apartamento"=>{"local"=>"F 601", "nome_proprietario"=>"Bianca ", "cpf_proprietario"=>"1232", "nome_morador"=>"Bianca ", "senha"=>"12321312"}, "commit"=>"Atualizar Apartamento", "id"=>"6"}
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "apartamentos" SET "nome_proprietario" = ?, "nome_morador" = ?, "senha" = ?, "updated_at" = ? WHERE "apartamentos"."id" = ?[0m  [["nome_proprietario", "Bianca "], ["nome_morador", "Bianca "], ["senha", "12321312"], ["updated_at", 2017-03-07 02:44:34 UTC], ["id", 6]]
+  [1m[35m (105.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/apartamentos/6
+Completed 302 Found in 113ms (ActiveRecord: 105.7ms)
+
+
+Started GET "/apartamentos/6" for 127.0.0.1 at 2017-03-06 23:44:34 -0300
+Processing by ApartamentosController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering apartamentos/show.html.erb within layouts/application
+  Rendered apartamentos/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 105ms (Views: 102.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-06 23:44:36 -0300
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.3ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 100ms (Views: 97.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-06 23:44:37 -0300
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.7ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 102ms (Views: 99.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-06 23:44:38 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.2ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.5ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 91ms (Views: 88.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/encomendas" for 127.0.0.1 at 2017-03-06 23:44:40 -0300
+Processing by EncomendasController#index as HTML
+  Rendering encomendas/index.html.erb within layouts/application
+  [1m[36mEncomenda Load (0.9ms)[0m  [1m[34mSELECT "encomendas".* FROM "encomendas"[0m
+  Rendered encomendas/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 86ms (Views: 83.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/encomendas" for 127.0.0.1 at 2017-03-06 23:44:41 -0300
+Processing by EncomendasController#index as HTML
+  Rendering encomendas/index.html.erb within layouts/application
+  [1m[36mEncomenda Load (0.3ms)[0m  [1m[34mSELECT "encomendas".* FROM "encomendas"[0m
+  Rendered encomendas/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 98ms (Views: 95.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/boletos" for 127.0.0.1 at 2017-03-06 23:44:42 -0300
+Processing by BoletosController#index as HTML
+  Rendering boletos/index.html.erb within layouts/application
+  [1m[36mBoleto Load (0.3ms)[0m  [1m[34mSELECT "boletos".* FROM "boletos"[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered boletos/index.html.erb within layouts/application (41.4ms)
+Completed 200 OK in 120ms (Views: 114.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/encomendas" for 127.0.0.1 at 2017-03-06 23:44:51 -0300
+Processing by EncomendasController#index as HTML
+  Rendering encomendas/index.html.erb within layouts/application
+  [1m[36mEncomenda Load (1.0ms)[0m  [1m[34mSELECT "encomendas".* FROM "encomendas"[0m
+  Rendered encomendas/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 111ms (Views: 107.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/boletos" for 127.0.0.1 at 2017-03-06 23:44:53 -0300
+Processing by BoletosController#index as HTML
+  Rendering boletos/index.html.erb within layouts/application
+  [1m[36mBoleto Load (0.3ms)[0m  [1m[34mSELECT "boletos".* FROM "boletos"[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered boletos/index.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 128ms (Views: 125.4ms | ActiveRecord: 0.9ms)
+
+
