@@ -1,0 +1,74 @@
+<%= form_for @vaga, :html => { :class => "form-horizontal vaga" } do |f| %>
+
+  <% if @vaga.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@vaga.errors.count, "error") %> prohibited this vaga from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @vaga.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+   <div class="form-group">
+    <div class="col-lg-12">
+      <h2> Dados da Vaga</h2>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Localização", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :local, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:local) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :apartamento_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :apartamento_id, options_for_select(@apartamento.map{ |c| [c.local, c.id, {'local'=>c.local}] }, apartamento_id = f.object.apartamento_id) %>
+    </div>
+    <%=f.error_span(:apartamento_id) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-12">
+      <h2> Dados do Carro</h2>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Modelo ", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :modelo_carro, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:modelo_carro) %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Cor", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :car_carro, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:car_carro) %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Placa", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :placa_carro, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:placa_carro) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("Cancelar")),
+                vagas_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>

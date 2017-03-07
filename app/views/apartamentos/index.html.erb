@@ -1,0 +1,37 @@
+<%- model_class = Apartamento -%>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name("Bloco e Número") %></th>
+      <th><%= model_class.human_attribute_name("Proprietário") %></th>
+      <th><%= model_class.human_attribute_name("CPF do Proprietário") %></th>
+      <th><%= model_class.human_attribute_name("Morador Atual") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @apartamentos.each do |apartamento| %>
+      <tr>
+        <td><%= apartamento.local %></td>
+        <td><%= apartamento.nome_proprietario %></td>
+        <td><%= apartamento.cpf_proprietario %></td>
+        <td><%= apartamento.nome_morador %></td>
+        <td>
+          <%= link_to t('.show', :default => t("Mais")),
+                      apartamento_path(apartamento), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.edit', :default => t("Editar")),
+                      edit_apartamento_path(apartamento), :class => 'btn btn-default btn-xs' %>
+          <!--<%= link_to t('.destroy', :default => t("Apagar")),
+                      apartamento_path(apartamento),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Você tem certeza?')) },
+                      :class => 'btn btn-xs btn-danger' %>-->
+                     
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("Adicionar Novo Apartamento")),
+            new_apartamento_path,
+            :class => 'btn btn-primary' %>

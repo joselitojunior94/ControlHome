@@ -1,0 +1,25 @@
+<%- model_class = Apartamento -%>
+
+<div class="page-header">
+  <h1>Dados do Apartamento <%= @apartamento.local%></h1>
+</div>
+
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name("Nome do Proprietário") %>:</strong></dt>
+  <dd><%= @apartamento.nome_proprietario %></dd>
+  <dt><strong><%= model_class.human_attribute_name("CPF do Proprietário") %>:</strong></dt>
+  <dd><%= @apartamento.cpf_proprietario %></dd>
+  <dt><strong><%= model_class.human_attribute_name("Nome do Morador") %>:</strong></dt>
+  <dd><%= @apartamento.nome_morador %></dd>
+  <dt><strong><%= model_class.human_attribute_name("Adicionado em:") %>:</strong></dt>
+  <dd><%= @apartamento.created_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name("Última modificação:") %>:</strong></dt>
+  <dd><%= @apartamento.updated_at %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("Voltar")),
+              apartamentos_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("Editar")),
+              edit_apartamento_path(@apartamento), :class => 'btn btn-default' %>
+

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  local: MyString
+  apartamento: one
+  modelo_carro: MyString
+  car_carro: MyString
+  placa_carro: MyString
+
+two:
+  local: MyString
+  apartamento: two
+  modelo_carro: MyString
+  car_carro: MyString
+  placa_carro: MyString

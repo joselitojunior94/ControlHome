@@ -1,0 +1,134 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Static version of css will use Glyphicons sprites by default
+  =require twitter-bootstrap-static/sprites
+*/
+body {
+    background-color: #E6E9ED !important;
+
+  }
+
+.navbar{
+	background-color: #E6E9ED	 !important;
+	size: 10 !important;
+  text-align: center;
+}
+
+.navbar-brand{
+	background-color: #333; 
+	border-radius:50px;  
+}
+
+.form-control{
+  border-radius:50px;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #FDFEFE;
+    background-color: #5e5e5e;
+}
+
+tbody {
+    background-color: #FDFEFE;
+}
+
+th{
+
+	text-align: center;
+}
+
+td{
+	text-align: center;
+	border-radius:50px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-radius:50px; 
+    overflow: hidden;
+    background-color: #333;
+    color: #FDFEFE;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    color: #FDFEFE;
+    background-color: #5e5e5e;
+}
+
+.navbar-default .navbar-brand {
+    color: #FDFEFE;
+    height: 80px;
+    width: 80px;
+}
+
+.navbar-default .navbar-nav>li>a{
+	color: #FDFEFE
+}
+
+.navbar-default .navbar-brand {
+    color: #FDFEFE;
+}
+
+.translation_missing{
+
+	 color: #FDFEFE	 !important;
+}
+
+.btn {
+
+	background-color:  #17202A !important;
+	border-radius:50px;
+
+}
+
+.btn:hover {
+
+	background-color: #5e5e5e !important;
+	border-radius:50px;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #E6E9ED;
+}
+
+select{
+	border-radius: 50px;
+	height: 34px;
+  width: 200px;
+  padding: 6px 12px;
+  border-radius: 50px;
+  
+}
+
+.alert{
+	background-color: #FDFEFE !important;
+} 
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.help-block{
+
+  margin-bottom: 20px;
+}
+
+.field_with_errors {
+   background-color: #ff8080 !important;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+}

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  local: MyString
+  nome_proprietario: MyString
+  cpf_proprietario: 1
+  nome_morador: MyString
+  senha: MyString
+
+two:
+  local: MyString
+  nome_proprietario: MyString
+  cpf_proprietario: 1
+  nome_morador: MyString
+  senha: MyString

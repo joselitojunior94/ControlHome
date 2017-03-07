@@ -1,0 +1,34 @@
+<%- model_class = Encomenda -%>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name("Tipo") %>:</strong></dt>
+  <dd><%= @encomenda.tipo %></dd>
+  <dt><strong><%= model_class.human_attribute_name("Destinatário") %>:</strong></dt>
+  <dd><%= @encomenda.destinatario %></dd>
+  <dt><strong><%= model_class.human_attribute_name("Remetente") %>:</strong></dt>
+  <dd><%= @encomenda.remetente %></dd>
+  <dt><strong><%= model_class.human_attribute_name("Data de Chegada") %>:</strong></dt>
+  <dd><%= @encomenda.data_chegada %></dd>
+  <dt><strong><%= model_class.human_attribute_name("Apartamento") %>:</strong></dt>
+  <dd><%= @encomenda.apartamento.local %></dd>
+  <dt><strong><%= model_class.human_attribute_name("Observação") %>:</strong></dt>
+  <dd><%= @encomenda.obs %></dd>
+  <% if (@encomenda.entregue == true)%>
+  <dt><strong><%= model_class.human_attribute_name("Status") %>:</strong></dt>
+  <dd>Entregue</dd>
+  <dt><strong><%= model_class.human_attribute_name("Data Recebimento") %>:</strong></dt>
+  <dd><%= @encomenda.data_recebimento %></dd>
+  <% end %>
+</dl>
+
+<%= link_to t('.back', :default => t("Voltar")),
+              encomendas_path, :class => 'btn btn-default'  %>
+<% if (@encomenda.entregue != true)%>
+<%= link_to t('.edit', :default => t("Editar")),
+              edit_encomenda_path(@encomenda), :class => 'btn btn-default' %>
+<% end %>
+<%= link_to t('.destroy', :default => t("Apagar")),
+              encomenda_path(@encomenda),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  apartamento: one
+  codigo: 1
+  valor_boleto: 1.5
+  juros_boleto: 1.5
+  data_emissao: 2017-02-25
+  data_vencimento: 2017-02-25
+  status: false
+
+two:
+  apartamento: two
+  codigo: 1
+  valor_boleto: 1.5
+  juros_boleto: 1.5
+  data_emissao: 2017-02-25
+  data_vencimento: 2017-02-25
+  status: false

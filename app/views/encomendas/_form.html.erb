@@ -1,0 +1,95 @@
+<%= form_for @encomenda, :html => { :class => "form-horizontal encomenda" } do |f| %>
+
+  <% if @encomenda.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@encomenda.errors.count, "error") %> prohibited this encomenda from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @encomenda.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label "Tipo", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :tipo, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tipo) %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Destinatário", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :destinatario, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:destinatario) %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Remetente", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :remetente, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:remetente) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Data de chegada", :class => 'control-label col-lg-2' %>
+  
+    <div class="col-lg-10">
+     <%= f.date_select :data_chegada, :class => 'form-control ' %>
+    </div>
+    <%=f.error_span(:data_chegada) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :apartamento_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :apartamento_id, options_for_select(@apartamento.map{ |c| [c.local, c.id, {'local'=>c.local}] }, apartamento_id = f.object.apartamento_id) %>
+    </div>
+    <%=f.error_span(:apartamento_id) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Observação", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :obs, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:obs) %>
+  </div>
+
+  <% if(@encomenda.apartamento_id != nil) %>
+  <div class="page-header">
+    <h1>Dados de Recebimento</h1>
+  </div>
+
+   <div class="form-group">
+    <%= f.label "Entregue", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-1">
+      <%= f.check_box :entregue, :class => 'form-control' %>
+    </div>
+  </div>
+ 
+
+  <div class="form-group">
+    <%= f.label "Data de Recebimento", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.date_select :data_recebimento, :class => 'form-control ' %>
+    </div>
+    <%=f.error_span(:data_recebimento) %>
+  </div>
+  
+  <% end %>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("Cancelar")),
+                encomendas_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

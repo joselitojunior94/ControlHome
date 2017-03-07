@@ -1,0 +1,54 @@
+<%= form_for @apartamento, :html => { :class => "form-horizontal apartamento" } do |f| %>
+
+
+  <div class="form-group">
+    <%= f.label "Bloco e Número", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :local, :class => 'form-control' %>
+      <%=f.error_span(:local) %>
+    </div>
+    
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label "Nome do Proprietário", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nome_proprietario, :class => 'form-control' %>
+      <%=f.error_span(:nome_proprietario) %>
+    </div>
+
+    
+  </div>
+  <div class="form-group">
+    <%= f.label "CPF do Proprietário", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :cpf_proprietario, :class => 'form-control' %>
+      <%=f.error_span(:cpf_proprietario) %>
+    </div>
+    
+  </div>
+  <div class="form-group">
+    <%= f.label "Nome do Morador Atual", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nome_morador, :class => 'form-control' %>
+      <%=f.error_span(:nome_morador) %>
+    </div> 
+  </div>
+  <div class="form-group">
+    <%= f.label "Senha", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.password_field :senha, :class => 'form-control' %>
+      <%=f.error_span(:senha) %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("Cancelar")),
+                apartamentos_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
