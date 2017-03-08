@@ -15,8 +15,8 @@
       <tr>
         <td><%= boleto.apartamento.local %></td>
         <td><%= boleto.codigo %></td>
-        <td><%= boleto.data_emissao %></td>
-        <td><%= boleto.data_vencimento %></td>
+        <td><%= boleto.data_emissao.strftime("%d/%m/%Y") %></td>
+        <td><%= boleto.data_vencimento.strftime("%d/%m/%Y") %></td>
         <% if(boleto.status == true)%>
         <td  bgcolor="dce775" ><%= 'Pago' %></td>
         <% else %>

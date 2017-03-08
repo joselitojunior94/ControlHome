@@ -11,9 +11,9 @@
   <dt><strong><%= model_class.human_attribute_name("Juros") %>:</strong></dt>
   <dd><%= @boleto.juros_boleto %></dd>
   <dt><strong><%= model_class.human_attribute_name("Data de Emissão") %>:</strong></dt>
-  <dd><%= @boleto.data_emissao %></dd>
+  <dd><%= @boleto.data_emissao.strftime("%d/%m/%Y") %></dd>
   <dt><strong><%= model_class.human_attribute_name("Data de Vencimento") %>:</strong></dt>
-  <dd><%= @boleto.data_vencimento %></dd>
+  <dd><%= @boleto.data_vencimento.strftime("%d/%m/%Y") %></dd>
 
   <dt><strong><%= model_class.human_attribute_name("Status") %>:</strong></dt>
 

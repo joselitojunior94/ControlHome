@@ -18,8 +18,8 @@
         <td><%= encomenda.tipo %></td>
         <td><%= encomenda.destinatario %></td>
         <td><%= encomenda.remetente %></td>
-        <td><%= encomenda.data_chegada %></td>  
-        <td><%= encomenda.data_recebimento %></td>
+        <td><%= encomenda.data_chegada.strftime("%d/%m/%Y") %></td>  
+        <td><%= encomenda.data_recebimento.strftime("%d/%m/%Y") %></td>
 
         <% if(encomenda.entregue == true)%>
         <td  bgcolor="dce775" ><%= 'Retirado' %></td>

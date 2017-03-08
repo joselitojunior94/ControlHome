@@ -6,6 +6,7 @@
       <th><%= model_class.human_attribute_name("Proprietário") %></th>
       <th><%= model_class.human_attribute_name("CPF do Proprietário") %></th>
       <th><%= model_class.human_attribute_name("Morador Atual") %></th>
+      <th><%= model_class.human_attribute_name("Criado em") %></th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +16,7 @@
         <td><%= apartamento.nome_proprietario %></td>
         <td><%= apartamento.cpf_proprietario %></td>
         <td><%= apartamento.nome_morador %></td>
+         <td><%= apartamento.created_at.strftime("%d/%m/%Y") %></td>
         <td>
           <%= link_to t('.show', :default => t("Mais")),
                       apartamento_path(apartamento), :class => 'btn btn-default btn-xs' %>
