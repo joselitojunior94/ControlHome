@@ -42241,3 +42241,639 @@ Processing by VagasController#index as HTML
 Completed 200 OK in 167ms (Views: 164.5ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-08 14:05:40 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-08 14:05:40 -0300
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.5ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (1003.0ms)
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (1371.0ms)
+Completed 200 OK in 1727ms (Views: 1714.8ms | ActiveRecord: 2.0ms)
+
+
+Completed 200 OK in 1859ms (Views: 1830.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/apartamentos/1" for 127.0.0.1 at 2017-03-08 14:05:49 -0300
+Processing by ApartamentosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartamento Load (0.3ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartamentos/show.html.erb within layouts/application
+  Rendered apartamentos/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 104ms (Views: 91.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-08 14:05:50 -0300
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.4ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 128ms (Views: 125.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-08 14:05:52 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.2ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (39.6ms)
+Completed 200 OK in 135ms (Views: 118.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/vagas/1/edit" for 127.0.0.1 at 2017-03-08 14:05:56 -0300
+Processing by VagasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVaga Load (0.2ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering vagas/edit.html.erb within layouts/application
+  [1m[36mApartamento Load (1.0ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered vagas/_form.html.erb (23.7ms)
+  Rendered vagas/edit.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 106ms (Views: 101.9ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/vagas/1" for 127.0.0.1 at 2017-03-08 14:06:06 -0300
+Processing by VagasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S9jJhPs1NvJU0CaRVlQQVV+R2h+z0n/9yuxXhxXia2YvwtRUuEMoYfFGYywgsRC17wIPzGfrtHJuH09P933vvQ==", "vaga"=>{"local"=>"G3 56", "apartamento_id"=>"1", "modelo_carro"=>"Gol", "car_carro"=>"Prata Egito", "placa_carro"=>"QQQ-0000"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mVaga Load (0.5ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "vagas" SET "placa_carro" = ?, "updated_at" = ? WHERE "vagas"."id" = ?[0m  [["placa_carro", "QQQ-0000"], ["updated_at", 2017-03-08 17:06:06 UTC], ["id", 1]]
+  [1m[35m (177.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/vagas/1
+Completed 302 Found in 210ms (ActiveRecord: 179.1ms)
+
+
+Started GET "/vagas/1" for 127.0.0.1 at 2017-03-08 14:06:06 -0300
+Processing by VagasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVaga Load (0.2ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering vagas/show.html.erb within layouts/application
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered vagas/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 95ms (Views: 93.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-08 14:06:08 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.3ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 108ms (Views: 104.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vagas/2/edit" for 127.0.0.1 at 2017-03-08 14:06:09 -0300
+Processing by VagasController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVaga Load (0.1ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering vagas/edit.html.erb within layouts/application
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered vagas/_form.html.erb (11.2ms)
+  Rendered vagas/edit.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 101ms (Views: 97.7ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/vagas/2" for 127.0.0.1 at 2017-03-08 14:06:19 -0300
+Processing by VagasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rR4rp6qlDCxUhygHnB2UOGjFR4RtisAX1xAAP7xZZ68KxWf42FQG6sQECCEWFV+gt8fAtdsC+/EA6fkRfJE5uw==", "vaga"=>{"local"=>"G4 35", "apartamento_id"=>"2", "modelo_carro"=>"BMW X1", "car_carro"=>"Vermelho", "placa_carro"=>"JJJ-0000"}, "commit"=>"Atualizar Vaga", "id"=>"2"}
+  [1m[36mVaga Load (0.1ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "vagas" SET "placa_carro" = ?, "updated_at" = ? WHERE "vagas"."id" = ?[0m  [["placa_carro", "JJJ-0000"], ["updated_at", 2017-03-08 17:06:19 UTC], ["id", 2]]
+  [1m[35m (181.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/vagas/2
+Completed 302 Found in 193ms (ActiveRecord: 181.7ms)
+
+
+Started GET "/vagas/2" for 127.0.0.1 at 2017-03-08 14:06:19 -0300
+Processing by VagasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVaga Load (0.1ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering vagas/show.html.erb within layouts/application
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 94ms (Views: 89.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-08 14:06:21 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.2ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 107ms (Views: 103.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vagas/3/edit" for 127.0.0.1 at 2017-03-08 14:06:23 -0300
+Processing by VagasController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVaga Load (0.2ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering vagas/edit.html.erb within layouts/application
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered vagas/_form.html.erb (10.1ms)
+  Rendered vagas/edit.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 99ms (Views: 95.8ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/vagas/3" for 127.0.0.1 at 2017-03-08 14:06:29 -0300
+Processing by VagasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dFpiIp/I04hj6TGNGIOURCNcSQRITArCTQkc9epGmLpQ6/4xguZlQoldhfBOzVzbOfuxFzDHc9+yz9MyDb7gPg==", "vaga"=>{"local"=>"G1 33", "apartamento_id"=>"2", "modelo_carro"=>"Mercedes", "car_carro"=>"Preto", "placa_carro"=>"EEE-0000"}, "commit"=>"Atualizar Vaga", "id"=>"3"}
+  [1m[36mVaga Load (0.2ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "vagas" SET "placa_carro" = ?, "updated_at" = ? WHERE "vagas"."id" = ?[0m  [["placa_carro", "EEE-0000"], ["updated_at", 2017-03-08 17:06:29 UTC], ["id", 3]]
+  [1m[35m (284.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/vagas/3
+Completed 302 Found in 294ms (ActiveRecord: 285.4ms)
+
+
+Started GET "/vagas/3" for 127.0.0.1 at 2017-03-08 14:06:29 -0300
+Processing by VagasController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVaga Load (0.1ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering vagas/show.html.erb within layouts/application
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 91ms (Views: 88.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-08 14:06:31 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.5ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.3ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 101ms (Views: 98.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-08 14:06:32 -0300
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.3ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 97ms (Views: 95.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/apartamentos/2/edit" for 127.0.0.1 at 2017-03-08 14:06:35 -0300
+Processing by ApartamentosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering apartamentos/edit.html.erb within layouts/application
+  Rendered apartamentos/_form.html.erb (11.5ms)
+  Rendered apartamentos/edit.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 95ms (Views: 92.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-08 14:06:37 -0300
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.3ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 129ms (Views: 126.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-08 14:06:38 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.3ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.3ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 138ms (Views: 135.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/encomendas" for 127.0.0.1 at 2017-03-08 14:06:41 -0300
+Processing by EncomendasController#index as HTML
+  Rendering encomendas/index.html.erb within layouts/application
+  [1m[36mEncomenda Load (0.3ms)[0m  [1m[34mSELECT "encomendas".* FROM "encomendas"[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered encomendas/index.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 129ms (Views: 122.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/encomendas/6/edit" for 127.0.0.1 at 2017-03-08 14:06:43 -0300
+Processing by EncomendasController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEncomenda Load (0.2ms)[0m  [1m[34mSELECT  "encomendas".* FROM "encomendas" WHERE "encomendas"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering encomendas/edit.html.erb within layouts/application
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered encomendas/_form.html.erb (17.9ms)
+  Rendered encomendas/edit.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 156ms (Views: 110.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/encomendas" for 127.0.0.1 at 2017-03-08 14:06:47 -0300
+Processing by EncomendasController#index as HTML
+  Rendering encomendas/index.html.erb within layouts/application
+  [1m[36mEncomenda Load (0.3ms)[0m  [1m[34mSELECT "encomendas".* FROM "encomendas"[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered encomendas/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 125ms (Views: 122.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/boletos" for 127.0.0.1 at 2017-03-08 14:06:49 -0300
+Processing by BoletosController#index as HTML
+  Rendering boletos/index.html.erb within layouts/application
+  [1m[36mBoleto Load (0.3ms)[0m  [1m[34mSELECT "boletos".* FROM "boletos"[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered boletos/index.html.erb within layouts/application (63.7ms)
+Completed 200 OK in 170ms (Views: 163.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/boletos/11/edit" for 127.0.0.1 at 2017-03-08 14:06:51 -0300
+Processing by BoletosController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mBoleto Load (0.3ms)[0m  [1m[34mSELECT  "boletos".* FROM "boletos" WHERE "boletos"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering boletos/edit.html.erb within layouts/application
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered boletos/_form.html.erb (16.1ms)
+  Rendered boletos/edit.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 107ms (Views: 103.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/boletos" for 127.0.0.1 at 2017-03-08 14:06:53 -0300
+Processing by BoletosController#index as HTML
+  Rendering boletos/index.html.erb within layouts/application
+  [1m[36mBoleto Load (1.1ms)[0m  [1m[34mSELECT "boletos".* FROM "boletos"[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered boletos/index.html.erb within layouts/application (49.9ms)
+Completed 200 OK in 136ms (Views: 132.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-08 14:06:57 -0300
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.3ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 114ms (Views: 111.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/apartamentos/1/edit" for 127.0.0.1 at 2017-03-08 14:06:59 -0300
+Processing by ApartamentosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartamentos/edit.html.erb within layouts/application
+  Rendered apartamentos/_form.html.erb (7.7ms)
+  Rendered apartamentos/edit.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 86ms (Views: 83.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-08 14:07:00 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.3ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 114ms (Views: 111.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vagas/1/edit" for 127.0.0.1 at 2017-03-08 14:07:02 -0300
+Processing by VagasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVaga Load (0.1ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering vagas/edit.html.erb within layouts/application
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered vagas/_form.html.erb (10.6ms)
+  Rendered vagas/edit.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 94ms (Views: 91.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-08 14:07:06 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.8ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.3ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 108ms (Views: 103.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/boletos" for 127.0.0.1 at 2017-03-08 14:07:51 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BoletosController#index as HTML
+  Rendering boletos/index.html.erb within layouts/application
+  [1m[36mBoleto Load (0.4ms)[0m  [1m[34mSELECT "boletos".* FROM "boletos"[0m
+  [1m[36mApartamento Load (0.3ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered boletos/index.html.erb within layouts/application (598.3ms)
+Completed 200 OK in 1074ms (Views: 1034.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-08 14:07:54 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (1.6ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.5ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (59.5ms)
+Completed 200 OK in 178ms (Views: 164.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/vagas/2/edit" for 127.0.0.1 at 2017-03-08 14:07:57 -0300
+Processing by VagasController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVaga Load (0.2ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering vagas/edit.html.erb within layouts/application
+  [1m[36mApartamento Load (0.6ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered vagas/_form.html.erb (25.1ms)
+  Rendered vagas/edit.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 179ms (Views: 175.5ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/vagas/2" for 127.0.0.1 at 2017-03-08 14:08:08 -0300
+Processing by VagasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oV2iqEFk0hFMCL114mxJyXjVqQH52icz5fymhn041GwGhu73M5XY19yLnVNoZIJRp9cuME9SHNUyBV+ovfCKeA==", "vaga"=>{"local"=>"G4 35", "apartamento_id"=>"2", "modelo_carro"=>"DeLorean", "car_carro"=>"Vermelho", "placa_carro"=>"JJJ-0000"}, "commit"=>"Atualizar Vaga", "id"=>"2"}
+  [1m[36mVaga Load (0.1ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "vagas" SET "modelo_carro" = ?, "updated_at" = ? WHERE "vagas"."id" = ?[0m  [["modelo_carro", "DeLorean"], ["updated_at", 2017-03-08 17:08:08 UTC], ["id", 2]]
+  [1m[35m (173.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/vagas/2
+Completed 302 Found in 205ms (ActiveRecord: 174.6ms)
+
+
+Started GET "/vagas/2" for 127.0.0.1 at 2017-03-08 14:08:08 -0300
+Processing by VagasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVaga Load (0.3ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering vagas/show.html.erb within layouts/application
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 103ms (Views: 100.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-08 14:08:09 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.3ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.3ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.4ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 112ms (Views: 109.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/vagas/3/edit" for 127.0.0.1 at 2017-03-08 14:08:11 -0300
+Processing by VagasController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVaga Load (0.3ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering vagas/edit.html.erb within layouts/application
+  [1m[36mApartamento Load (0.3ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered vagas/_form.html.erb (10.9ms)
+  Rendered vagas/edit.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 116ms (Views: 113.2ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/vagas/3" for 127.0.0.1 at 2017-03-08 14:08:18 -0300
+Processing by VagasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vY8v36ZkTXJnwxg1dBpmBf8wFCIPaPaiVFC37ZHqNH2ZPrPMu0r7uI13rEgiVK6a5ZfsMXfjj7+rlngqdhJM+Q==", "vaga"=>{"local"=>"G1 33", "apartamento_id"=>"2", "modelo_carro"=>"Fusca", "car_carro"=>"Preto", "placa_carro"=>"EEE-0000"}, "commit"=>"Atualizar Vaga", "id"=>"3"}
+  [1m[36mVaga Load (0.2ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "vagas" SET "modelo_carro" = ?, "updated_at" = ? WHERE "vagas"."id" = ?[0m  [["modelo_carro", "Fusca"], ["updated_at", 2017-03-08 17:08:18 UTC], ["id", 3]]
+  [1m[35m (200.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/vagas/3
+Completed 302 Found in 211ms (ActiveRecord: 201.0ms)
+
+
+Started GET "/vagas/3" for 127.0.0.1 at 2017-03-08 14:08:18 -0300
+Processing by VagasController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVaga Load (0.2ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering vagas/show.html.erb within layouts/application
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 103ms (Views: 100.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-08 14:08:19 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.5ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 110ms (Views: 107.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/vagas/1/edit" for 127.0.0.1 at 2017-03-08 14:08:22 -0300
+Processing by VagasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVaga Load (0.1ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering vagas/edit.html.erb within layouts/application
+  [1m[36mApartamento Load (0.3ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered vagas/_form.html.erb (10.7ms)
+  Rendered vagas/edit.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 88ms (Views: 85.6ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/vagas/1" for 127.0.0.1 at 2017-03-08 14:08:26 -0300
+Processing by VagasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+FYM6b5ns0CtdM/jcQR4GtSuGhQ4mdl5pOpH915CGgmcTBE5/RGt0wjiil4H4Xj6ZD3Px+ygEvYAGV8/vN2e0g==", "vaga"=>{"local"=>"G3 56", "apartamento_id"=>"1", "modelo_carro"=>"Gol", "car_carro"=>"Prata ", "placa_carro"=>"QQQ-0000"}, "commit"=>"Atualizar Vaga", "id"=>"1"}
+  [1m[36mVaga Load (0.1ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "vagas" SET "car_carro" = ?, "updated_at" = ? WHERE "vagas"."id" = ?[0m  [["car_carro", "Prata "], ["updated_at", 2017-03-08 17:08:26 UTC], ["id", 1]]
+  [1m[35m (247.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/vagas/1
+Completed 302 Found in 259ms (ActiveRecord: 248.8ms)
+
+
+Started GET "/vagas/1" for 127.0.0.1 at 2017-03-08 14:08:26 -0300
+Processing by VagasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVaga Load (0.1ms)[0m  [1m[34mSELECT  "vagas".* FROM "vagas" WHERE "vagas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering vagas/show.html.erb within layouts/application
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered vagas/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 120ms (Views: 117.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-08 14:08:28 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.3ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.8ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 103ms (Views: 99.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-08 14:08:37 -0300
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.5ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 101ms (Views: 98.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-08 14:08:42 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.4ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 122ms (Views: 119.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/encomendas" for 127.0.0.1 at 2017-03-08 14:08:43 -0300
+Processing by EncomendasController#index as HTML
+  Rendering encomendas/index.html.erb within layouts/application
+  [1m[36mEncomenda Load (0.3ms)[0m  [1m[34mSELECT "encomendas".* FROM "encomendas"[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered encomendas/index.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 161ms (Views: 152.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/encomendas/6/edit" for 127.0.0.1 at 2017-03-08 14:08:46 -0300
+Processing by EncomendasController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEncomenda Load (0.3ms)[0m  [1m[34mSELECT  "encomendas".* FROM "encomendas" WHERE "encomendas"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering encomendas/edit.html.erb within layouts/application
+  [1m[36mApartamento Load (0.8ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered encomendas/_form.html.erb (26.0ms)
+  Rendered encomendas/edit.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 142ms (Views: 136.1ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/encomendas/6" for 127.0.0.1 at 2017-03-08 14:09:17 -0300
+Processing by EncomendasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QgDPhXYNyOHAWzyOPouSdQaozGUhvGJFgZYTVbJl1xJZp5INWGoBh/Ay+6aqN/LqfQ8I+lXNeW/4oN+lyiUFbw==", "encomenda"=>{"tipo"=>"Carta Registrada", "destinatario"=>"Jose", "remetente"=>"Rúbia", "data_chegada(3i)"=>"7", "data_chegada(2i)"=>"3", "data_chegada(1i)"=>"2017", "apartamento_id"=>"5", "obs"=>"Carta ", "entregue"=>"1", "data_recebimento(3i)"=>"7", "data_recebimento(2i)"=>"3", "data_recebimento(1i)"=>"2017"}, "commit"=>"Atualizar Encomenda", "id"=>"6"}
+  [1m[36mEncomenda Load (0.3ms)[0m  [1m[34mSELECT  "encomendas".* FROM "encomendas" WHERE "encomendas"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "encomendas" SET "remetente" = ?, "updated_at" = ? WHERE "encomendas"."id" = ?[0m  [["remetente", "Rúbia"], ["updated_at", 2017-03-08 17:09:17 UTC], ["id", 6]]
+  [1m[35m (208.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/encomendas/6
+Completed 302 Found in 223ms (ActiveRecord: 209.6ms)
+
+
+Started GET "/encomendas/6" for 127.0.0.1 at 2017-03-08 14:09:17 -0300
+Processing by EncomendasController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEncomenda Load (0.1ms)[0m  [1m[34mSELECT  "encomendas".* FROM "encomendas" WHERE "encomendas"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering encomendas/show.html.erb within layouts/application
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered encomendas/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 100ms (Views: 98.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/encomendas" for 127.0.0.1 at 2017-03-08 14:09:19 -0300
+Processing by EncomendasController#index as HTML
+  Rendering encomendas/index.html.erb within layouts/application
+  [1m[36mEncomenda Load (1.1ms)[0m  [1m[34mSELECT "encomendas".* FROM "encomendas"[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered encomendas/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 94ms (Views: 91.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/encomendas" for 127.0.0.1 at 2017-03-08 14:09:21 -0300
+Processing by EncomendasController#index as HTML
+  Rendering encomendas/index.html.erb within layouts/application
+  [1m[36mEncomenda Load (0.2ms)[0m  [1m[34mSELECT "encomendas".* FROM "encomendas"[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered encomendas/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 91ms (Views: 88.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/boletos" for 127.0.0.1 at 2017-03-08 14:09:23 -0300
+Processing by BoletosController#index as HTML
+  Rendering boletos/index.html.erb within layouts/application
+  [1m[36mBoleto Load (0.3ms)[0m  [1m[34mSELECT "boletos".* FROM "boletos"[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered boletos/index.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 126ms (Views: 123.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/boletos" for 127.0.0.1 at 2017-03-08 14:09:23 -0300
+Processing by BoletosController#index as HTML
+  Rendering boletos/index.html.erb within layouts/application
+  [1m[36mBoleto Load (0.3ms)[0m  [1m[34mSELECT "boletos".* FROM "boletos"[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered boletos/index.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 112ms (Views: 109.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/encomendas" for 127.0.0.1 at 2017-03-08 14:09:26 -0300
+Processing by EncomendasController#index as HTML
+  Rendering encomendas/index.html.erb within layouts/application
+  [1m[36mEncomenda Load (0.7ms)[0m  [1m[34mSELECT "encomendas".* FROM "encomendas"[0m
+  [1m[36mApartamento Load (0.6ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered encomendas/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 109ms (Views: 106.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/vagas" for 127.0.0.1 at 2017-03-08 14:09:27 -0300
+Processing by VagasController#index as HTML
+  Rendering vagas/index.html.erb within layouts/application
+  [1m[36mVaga Load (0.9ms)[0m  [1m[34mSELECT "vagas".* FROM "vagas"[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered vagas/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 95ms (Views: 92.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-08 14:09:28 -0300
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.4ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 109ms (Views: 106.9ms | ActiveRecord: 0.4ms)
+
+
