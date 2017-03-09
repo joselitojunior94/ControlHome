@@ -33,6 +33,8 @@
   </tbody>
 </table>
 
+<% if(@apartamento != []) %>
 <%= link_to t('.new', :default => t("Adicionar Nova Vaga")),
             new_vaga_path,
             :class => 'btn btn-primary' %>
+<% end %>

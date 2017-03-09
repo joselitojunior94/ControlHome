@@ -14,9 +14,12 @@
   <dd><%= @boleto.data_emissao.strftime("%d/%m/%Y") %></dd>
   <dt><strong><%= model_class.human_attribute_name("Data de Vencimento") %>:</strong></dt>
   <dd><%= @boleto.data_vencimento.strftime("%d/%m/%Y") %></dd>
-
+  <dt><strong>Proprietária</strong></dt>
+  <dd><%= @boleto.apartamento.nome_proprietario %></dd>
+  <dt><strong>CPF Proprietária</strong></dt>
+  <dd><%= @boleto.apartamento.cpf_proprietario %></dd>
   <dt><strong><%= model_class.human_attribute_name("Status") %>:</strong></dt>
-
+  
   <% if(@boleto.status == true)%>
         <dd><%= 'Pago' %></dd>
   <% else %>

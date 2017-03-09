@@ -5,6 +5,7 @@ class VagasController < ApplicationController
   # GET /vagas.json
   def index
     @vagas = Vaga.all
+    @apartamento = Apartamento.all
   end
 
   # GET /vagas/1

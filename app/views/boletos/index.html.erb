@@ -15,8 +15,8 @@
       <tr>
         <td><%= boleto.apartamento.local %></td>
         <td><%= boleto.codigo %></td>
-        <td><%= boleto.data_emissao.strftime("%d/%m/%Y") %></td>
-        <td><%= boleto.data_vencimento.strftime("%d/%m/%Y") %></td>
+        <td><%= boleto.data_emissao.strftime("%d/%m/%Y")%></td>
+        <td><%= boleto.data_vencimento.strftime("%d/%m/%Y")%></td>
         <% if(boleto.status == true)%>
         <td  bgcolor="dce775" ><%= 'Pago' %></td>
         <% else %>
@@ -38,7 +38,8 @@
   </tbody>
   <% end %>
 </table>
-
+<% if(@apartamento != []) %>
 <%= link_to t('.new', :default => t("Adicionar Novo Boleto")),
             new_boleto_path,
             :class => 'btn btn-primary' %>
+<% end %>

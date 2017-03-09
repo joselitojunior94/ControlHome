@@ -15,7 +15,7 @@ class ApartamentosController < ApplicationController
   # GET /apartamentos/new
   def new
     @apartamento = Apartamento.new
-  
+    
   end
 
   # GET /apartamentos/1/edit
@@ -30,6 +30,23 @@ class ApartamentosController < ApplicationController
 
     respond_to do |format|
       if @apartamento.save
+        for i in 1..12
+          boleto = Boleto.new
+          boleto.apartamento_id = @apartamento.id
+          if(i == 12)
+            boleto.data_emissao = DateTime.new(DateTime.now.year, 12, 2, 0, 0, 0)
+            boleto.data_vencimento = DateTime.new(DateTime.now.year, 1, 2, 0, 0, 0)
+            boleto.codigo = Integer(000000+@apartamento.id+DateTime.now.year+i+(i+1)*10000000)
+          else
+            boleto.data_emissao = DateTime.new(DateTime.now.year, i, 2, 0, 0, 0) 
+            boleto.data_vencimento = DateTime.new(DateTime.now.year, (i+1), 2, 0, 0, 0)
+            boleto.codigo = Integer(@apartamento.id+DateTime.now.year+i+(i+1)*10000000)
+          end
+
+          boleto.created_at = DateTime.now
+          boleto.updated_at = DateTime.now
+          boleto.save
+        end
         format.html { redirect_to @apartamento, notice: 'Novo Apartamento foi adicionado com sucesso!' }
         format.json { render :show, status: :created, location: @apartamento }
       else
@@ -37,6 +54,8 @@ class ApartamentosController < ApplicationController
         format.json { render json: @apartamento.errors, status: :unprocessable_entity }
       end
     end
+    
+    
   end
 
   # PATCH/PUT /apartamentos/1

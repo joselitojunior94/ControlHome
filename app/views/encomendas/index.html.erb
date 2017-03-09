@@ -43,6 +43,8 @@
   </tbody>
 </table>
 
+<% if(@apartamento != []) %>
 <%= link_to t('.new', :default => t("Adicionar Nova Encomenda")),
             new_encomenda_path,
             :class => 'btn btn-primary' %>
+<% end %>
