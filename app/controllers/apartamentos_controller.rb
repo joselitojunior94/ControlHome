@@ -5,6 +5,7 @@ class ApartamentosController < ApplicationController
   # GET /apartamentos.json
   def index
     @apartamentos = Apartamento.all
+    
   end
 
   # GET /apartamentos/1
@@ -30,7 +31,8 @@ class ApartamentosController < ApplicationController
 
     respond_to do |format|
       if @apartamento.save
-        for i in 1..12
+        d = DateTime.now.month
+        for i in d..12
           boleto = Boleto.new
           boleto.apartamento_id = @apartamento.id
           if(i == 12)

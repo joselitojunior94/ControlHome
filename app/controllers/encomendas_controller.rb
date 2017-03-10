@@ -1,6 +1,5 @@
 class EncomendasController < ApplicationController
   before_action :set_encomenda, only: [:show, :edit, :update, :destroy]
-
   # GET /encomendas
   # GET /encomendas.json
   def index
