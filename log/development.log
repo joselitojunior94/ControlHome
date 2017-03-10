@@ -53142,3 +53142,78 @@ Completed 200 OK in 131ms (Views: 120.1ms | ActiveRecord: 1.2ms)
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (320.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (120.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEncomendas (20170225175805)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "encomendas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar, "destinatario" varchar, "remetente" varchar, "data_chegada" date, "apartamento_id" integer, "obs" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_encomendas_on_apartamento_id" ON "encomendas" ("apartamento_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170225175805"]]
+  [1m[35m (120.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateVagas (20170225180057)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "vagas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "local" varchar, "apartamento_id" integer, "modelo_carro" varchar, "car_carro" varchar, "placa_carro" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_vagas_on_apartamento_id" ON "vagas" ("apartamento_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170225180057"]]
+  [1m[35m (96.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBoletos (20170225180304)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "boletos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "apartamento_id" integer, "codigo" integer, "valor_boleto" float, "juros_boleto" float, "data_emissao" date, "data_vencimento" date, "status" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_boletos_on_apartamento_id" ON "boletos" ("apartamento_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170225180304"]]
+  [1m[35m (107.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateApartamentos (20170225181940)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "apartamentos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "local" varchar, "nome_proprietario" varchar, "cpf_proprietario" integer, "nome_morador" varchar, "senha" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170225181940"]]
+  [1m[35m (108.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddEntregueToEncomenda (20170301195140)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "encomendas" ADD "entregue" boolean[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170301195140"]]
+  [1m[35m (52.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDatarecebimentoToEncomenda (20170301201139)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "encomendas" ADD "data_recebimento" Date[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170301201139"]]
+  [1m[35m (52.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-10 20:16:41 UTC], ["updated_at", 2017-03-10 20:16:41 UTC]]
+  [1m[35m (46.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_boletos_on_apartamento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_boletos_on_apartamento_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_encomendas_on_apartamento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_encomendas_on_apartamento_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_vagas_on_apartamento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_vagas_on_apartamento_id' AND type='index'
+[0m
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-10 17:16:46 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.4ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (539.6ms)
+Completed 200 OK in 967ms (Views: 944.9ms | ActiveRecord: 0.9ms)
+
+
