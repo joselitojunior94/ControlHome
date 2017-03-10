@@ -52915,3 +52915,224 @@ Processing by BoletosController#index as HTML
 Completed 200 OK in 158ms (Views: 155.1ms | ActiveRecord: 1.4ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (92.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (131.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEncomendas (20170225175805)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "encomendas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tipo" varchar, "destinatario" varchar, "remetente" varchar, "data_chegada" date, "apartamento_id" integer, "obs" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_encomendas_on_apartamento_id" ON "encomendas" ("apartamento_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170225175805"]]
+  [1m[35m (124.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateVagas (20170225180057)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "vagas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "local" varchar, "apartamento_id" integer, "modelo_carro" varchar, "car_carro" varchar, "placa_carro" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_vagas_on_apartamento_id" ON "vagas" ("apartamento_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170225180057"]]
+  [1m[35m (95.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBoletos (20170225180304)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "boletos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "apartamento_id" integer, "codigo" integer, "valor_boleto" float, "juros_boleto" float, "data_emissao" date, "data_vencimento" date, "status" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_boletos_on_apartamento_id" ON "boletos" ("apartamento_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170225180304"]]
+  [1m[35m (95.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateApartamentos (20170225181940)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "apartamentos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "local" varchar, "nome_proprietario" varchar, "cpf_proprietario" integer, "nome_morador" varchar, "senha" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170225181940"]]
+  [1m[35m (119.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddEntregueToEncomenda (20170301195140)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "encomendas" ADD "entregue" boolean[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170301195140"]]
+  [1m[35m (63.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDatarecebimentoToEncomenda (20170301201139)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "encomendas" ADD "data_recebimento" Date[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170301201139"]]
+  [1m[35m (96.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-03-10 20:12:37 UTC], ["updated_at", 2017-03-10 20:12:37 UTC]]
+  [1m[35m (57.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_boletos_on_apartamento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_boletos_on_apartamento_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_encomendas_on_apartamento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_encomendas_on_apartamento_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_vagas_on_apartamento_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_vagas_on_apartamento_id' AND type='index'
+[0m
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-10 17:12:46 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-10 17:12:46 -0300
+Processing by ApartamentosController#index as HTML
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.6ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (1268.1ms)
+  Rendered apartamentos/index.html.erb within layouts/application (1297.8ms)
+Completed 200 OK in 3407ms (Views: 3195.3ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 3402ms (Views: 3194.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2017-03-10 17:12:50 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/favicon.ico"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered collection of /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [32 times] (44.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (26.1ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (110.6ms)
+Started GET "/apartamentos/new" for 127.0.0.1 at 2017-03-10 17:12:53 -0300
+Processing by ApartamentosController#new as HTML
+  Rendering apartamentos/new.html.erb within layouts/application
+  Rendered apartamentos/_form.html.erb (9.8ms)
+  Rendered apartamentos/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 101ms (Views: 86.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/apartamentos" for 127.0.0.1 at 2017-03-10 17:13:11 -0300
+Processing by ApartamentosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ISMh3qLJNTqkuSipKhafWUigD13fc+BTh4jakPUYqxSCKzsGPBHay/vT8rzW2i9PsmyK0VKz3Mrm5Nwi/vjBhQ==", "apartamento"=>{"local"=>"D 604", "nome_proprietario"=>"Susan", "cpf_proprietario"=>"121", "nome_morador"=>"Susan", "senha"=>"1231"}, "commit"=>"Criar Apartamento"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "apartamentos" ("local", "nome_proprietario", "cpf_proprietario", "nome_morador", "senha", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["local", "D 604"], ["nome_proprietario", "Susan"], ["cpf_proprietario", 121], ["nome_morador", "Susan"], ["senha", "1231"], ["created_at", 2017-03-10 20:13:11 UTC], ["updated_at", 2017-03-10 20:13:11 UTC]]
+  [1m[35m (141.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.4ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "boletos" ("apartamento_id", "codigo", "data_emissao", "data_vencimento", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["apartamento_id", 1], ["codigo", 40002021], ["data_emissao", Thu, 02 Mar 2017], ["data_vencimento", Sun, 02 Apr 2017], ["created_at", 2017-03-10 20:13:11 UTC], ["updated_at", 2017-03-10 20:13:11 UTC]]
+  [1m[35m (102.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "boletos" ("apartamento_id", "codigo", "data_emissao", "data_vencimento", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["apartamento_id", 1], ["codigo", 50002022], ["data_emissao", Sun, 02 Apr 2017], ["data_vencimento", Tue, 02 May 2017], ["created_at", 2017-03-10 20:13:11 UTC], ["updated_at", 2017-03-10 20:13:11 UTC]]
+  [1m[35m (62.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "boletos" ("apartamento_id", "codigo", "data_emissao", "data_vencimento", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["apartamento_id", 1], ["codigo", 60002023], ["data_emissao", Tue, 02 May 2017], ["data_vencimento", Fri, 02 Jun 2017], ["created_at", 2017-03-10 20:13:11 UTC], ["updated_at", 2017-03-10 20:13:11 UTC]]
+  [1m[35m (83.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "boletos" ("apartamento_id", "codigo", "data_emissao", "data_vencimento", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["apartamento_id", 1], ["codigo", 70002024], ["data_emissao", Fri, 02 Jun 2017], ["data_vencimento", Sun, 02 Jul 2017], ["created_at", 2017-03-10 20:13:11 UTC], ["updated_at", 2017-03-10 20:13:11 UTC]]
+  [1m[35m (62.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "boletos" ("apartamento_id", "codigo", "data_emissao", "data_vencimento", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["apartamento_id", 1], ["codigo", 80002025], ["data_emissao", Sun, 02 Jul 2017], ["data_vencimento", Wed, 02 Aug 2017], ["created_at", 2017-03-10 20:13:11 UTC], ["updated_at", 2017-03-10 20:13:11 UTC]]
+  [1m[35m (85.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "boletos" ("apartamento_id", "codigo", "data_emissao", "data_vencimento", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["apartamento_id", 1], ["codigo", 90002026], ["data_emissao", Wed, 02 Aug 2017], ["data_vencimento", Sat, 02 Sep 2017], ["created_at", 2017-03-10 20:13:11 UTC], ["updated_at", 2017-03-10 20:13:11 UTC]]
+  [1m[35m (88.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "boletos" ("apartamento_id", "codigo", "data_emissao", "data_vencimento", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["apartamento_id", 1], ["codigo", 100002027], ["data_emissao", Sat, 02 Sep 2017], ["data_vencimento", Mon, 02 Oct 2017], ["created_at", 2017-03-10 20:13:12 UTC], ["updated_at", 2017-03-10 20:13:12 UTC]]
+  [1m[35m (101.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "boletos" ("apartamento_id", "codigo", "data_emissao", "data_vencimento", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["apartamento_id", 1], ["codigo", 110002028], ["data_emissao", Mon, 02 Oct 2017], ["data_vencimento", Thu, 02 Nov 2017], ["created_at", 2017-03-10 20:13:12 UTC], ["updated_at", 2017-03-10 20:13:12 UTC]]
+  [1m[35m (62.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "boletos" ("apartamento_id", "codigo", "data_emissao", "data_vencimento", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["apartamento_id", 1], ["codigo", 120002029], ["data_emissao", Thu, 02 Nov 2017], ["data_vencimento", Sat, 02 Dec 2017], ["created_at", 2017-03-10 20:13:12 UTC], ["updated_at", 2017-03-10 20:13:12 UTC]]
+  [1m[35m (81.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mApartamento Load (0.1ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "boletos" ("apartamento_id", "codigo", "data_emissao", "data_vencimento", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["apartamento_id", 1], ["codigo", 130002030], ["data_emissao", Sat, 02 Dec 2017], ["data_vencimento", Tue, 02 Jan 2018], ["created_at", 2017-03-10 20:13:12 UTC], ["updated_at", 2017-03-10 20:13:12 UTC]]
+  [1m[35m (62.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/apartamentos/1
+Completed 302 Found in 1092ms (ActiveRecord: 942.2ms)
+
+
+Started GET "/apartamentos/1" for 127.0.0.1 at 2017-03-10 17:13:12 -0300
+Processing by ApartamentosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering apartamentos/show.html.erb within layouts/application
+  Rendered apartamentos/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 116ms (Views: 108.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/apartamentos" for 127.0.0.1 at 2017-03-10 17:13:14 -0300
+Processing by ApartamentosController#index as HTML
+  Rendering apartamentos/index.html.erb within layouts/application
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered apartamentos/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 90ms (Views: 87.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/boletos" for 127.0.0.1 at 2017-03-10 17:13:15 -0300
+Processing by BoletosController#index as HTML
+  Rendering boletos/index.html.erb within layouts/application
+  [1m[36mBoleto Load (0.6ms)[0m  [1m[34mSELECT "boletos".* FROM "boletos"[0m
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "apartamentos".* FROM "apartamentos" WHERE "apartamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mApartamento Load (0.2ms)[0m  [1m[34mSELECT "apartamentos".* FROM "apartamentos"[0m
+  Rendered boletos/index.html.erb within layouts/application (45.9ms)
+Completed 200 OK in 131ms (Views: 120.1ms | ActiveRecord: 1.2ms)
+
+

@@ -37,7 +37,7 @@ class ApartamentosController < ApplicationController
           boleto.apartamento_id = @apartamento.id
           if(i == 12)
             boleto.data_emissao = DateTime.new(DateTime.now.year, 12, 2, 0, 0, 0)
-            boleto.data_vencimento = DateTime.new(DateTime.now.year, 1, 2, 0, 0, 0)
+            boleto.data_vencimento = DateTime.new((DateTime.now.year+1), 1, 2, 0, 0, 0)
             boleto.codigo = Integer(000000+@apartamento.id+DateTime.now.year+i+(i+1)*10000000)
           else
             boleto.data_emissao = DateTime.new(DateTime.now.year, i, 2, 0, 0, 0) 
