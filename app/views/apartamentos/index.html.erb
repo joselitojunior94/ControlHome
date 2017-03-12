@@ -1,4 +1,15 @@
 <%- model_class = Apartamento -%>
+
+<div class="col-lg-offset-2 col-lg-10">
+  <%= form_tag(apartamentos_path, :method => :get) do %>
+   <%= submit_tag "Procurar", :class => 'btn btn-primary' %>
+    <div class="col-lg-10">
+      <%= text_field_tag 'search', nil, placeholder: 'Digite a Busca...', :class => 'form-control' %>  
+    </div>
+  <% end %>
+</div>
+    
+
 <table class="table table-striped">
   <thead>
     <tr>

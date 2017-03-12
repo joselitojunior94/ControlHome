@@ -4,8 +4,11 @@ class ApartamentosController < ApplicationController
   # GET /apartamentos
   # GET /apartamentos.json
   def index
-    @apartamentos = Apartamento.all
-    
+    if params[:search]
+      @apartamentos = Apartamento.search(params[:search])
+    else
+      @apartamentos = Apartamento.all
+    end
   end
 
   # GET /apartamentos/1
