@@ -1,4 +1,5 @@
 <%- model_class = Boleto -%>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -11,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @boletos.each do |boleto| %>    
+      <% @boletos.each do |boleto| %>
       <tr>
         <td><%= boleto.apartamento.local %></td>
         <td><%= boleto.codigo %></td>
