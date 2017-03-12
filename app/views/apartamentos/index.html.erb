@@ -1,23 +1,45 @@
 <%- model_class = Apartamento -%>
+<br>
 
-<div class="col-lg-offset-2 col-lg-10">
-  <%= form_tag(apartamentos_path, :method => :get) do %>
-   <%= submit_tag "Procurar", :class => 'btn btn-primary' %>
-    <div class="col-lg-10">
-      <%= text_field_tag 'search', nil, placeholder: 'Digite a Busca...', :class => 'form-control' %>  
-    </div>
-  <% end %>
-</div>
+<div class="form-group">   
+  <%= search_form_for @q do |f|%>
+
+  <div class="col-xs-2">
+    <%= f.search_field :local_cont, placeholder: 'Bloco e Número', :class => 'form-control' %>
+  </div>
+
+  <div class="col-xs-2">
+    <%= f.search_field :nome_proprietario_cont, placeholder: 'Proprietário', :class => 'form-control' %>
     
+  </div> 
+  
+  <div class="col-xs-2">
+    <%= f.search_field :cpf_proprietario_cont, placeholder: 'CPF do Proprietário', :class => 'form-control' %>
+  </div> 
+  
+  <div class="col-xs-2">
+    <%= f.search_field :nome_morador_cont, placeholder: 'Morador', :class => 'form-control' %>
+  </div> 
 
+  <div class="col-xs-2">
+    <%= f.search_field :created_at_cont, placeholder: 'Criado em', :class => 'form-control' %>
+  </div>
+  <div class="col-xs-2">
+    <%= f.submit :class => 'btn btn-primary' %>
+  </div>
+  <% end %>  
+</div>
+<br>
+<br>
+<br>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name("Bloco e Número") %></th>
-      <th><%= model_class.human_attribute_name("Proprietário") %></th>
+      <th><%= sort_link(@q, :local,'Bloco e Número', default_order: :desc)%></th>
+      <th><%= sort_link(@q, :nome_proprietario,'Proprietário') %></th>
       <th><%= model_class.human_attribute_name("CPF do Proprietário") %></th>
       <th><%= model_class.human_attribute_name("Morador Atual") %></th>
-      <th><%= model_class.human_attribute_name("Criado em") %></th>
+      <th><%= sort_link(@q, :created_at,'Criado em:') %></th>
     </tr>
   </thead>
   <tbody>
