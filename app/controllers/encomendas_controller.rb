@@ -3,8 +3,13 @@ class EncomendasController < ApplicationController
   # GET /encomendas
   # GET /encomendas.json
   def index
-    @encomendas = Encomenda.all
+    #@encomendas = Encomenda.all
     @apartamento = Apartamento.all
+
+    @q = Encomenda.ransack(params[:q])
+    @encomendas = @q.result.includes(:apartamento)
+
+    #@apartamentos = @q.result
   end
 
   # GET /encomendas/1

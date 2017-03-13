@@ -5,7 +5,10 @@ class ApartamentosController < ApplicationController
   # GET /apartamentos.json
   def index
     @q = Apartamento.ransack(params[:q])
+    
     @apartamentos = @q.result
+
+
   end
 
   # GET /apartamentos/1

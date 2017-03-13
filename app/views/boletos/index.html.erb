@@ -1,4 +1,39 @@
 <%- model_class = Boleto -%>
+<br>
+<div class="form-group">   
+  <%= search_form_for @q do |f|%>
+
+  <div class="col-xs-2">
+    <%= f.search_field :apartamento_local_cont, placeholder: 'Apartamento', :class => 'form-control' %>
+  </div>
+
+ <div class="col-xs-2">
+    <%= f.search_field :codigo_cont, placeholder: 'Código', :class => 'form-control' %>
+    
+  </div>
+
+  <div class="col-xs-2">
+    <%= f.search_field :apartamento_nome_proprietario_cont, placeholder: 'Proprietário', :class => 'form-control' %>
+    
+  </div> 
+  
+  <div class="col-xs-2">
+    <%= f.search_field :apartamento_cpf_proprietario_cont, placeholder: 'CPF do Proprietário', :class => 'form-control' %>
+  </div> 
+
+  <div class="col-xs-2">
+    <%= f.search_field :data_vencimento_cont, placeholder: 'Data de Vencimento', :class => 'form-control' %>
+  </div>
+
+  <div class="col-xs-2">
+    <%= f.submit :class => 'btn btn-primary' %>
+  </div>
+  <% end %>  
+</div>
+
+<br>
+<br>
+<br>
 
 <table class="table table-striped">
   <thead>

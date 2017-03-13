@@ -3,9 +3,11 @@ class VagasController < ApplicationController
 
   # GET /vagas
   # GET /vagas.json
-  def index
-    @vagas = Vaga.all
+  def index 
     @apartamento = Apartamento.all
+
+    @q = Vaga.ransack(params[:q])
+    @vagas = @q.result.includes(:apartamento)
   end
 
   # GET /vagas/1

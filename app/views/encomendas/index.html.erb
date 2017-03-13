@@ -1,4 +1,39 @@
 <%- model_class = Encomenda -%>
+
+<br>
+<div class="form-group">   
+  <%= search_form_for @q do |f|%>
+
+  <div class="col-xs-2">
+    <%= f.search_field :apartamento_local_cont, placeholder: 'Apartamento', :class => 'form-control' %>
+  </div>
+
+  <div class="col-xs-2">
+    <%= f.search_field :destinatario_cont, placeholder: 'Destinatário', :class => 'form-control' %>
+    
+  </div> 
+  
+  <div class="col-xs-2">
+    <%= f.search_field :remetente_cont, placeholder: 'Remetente', :class => 'form-control' %>
+  </div> 
+  
+  <div class="col-xs-2">
+    <%= f.search_field :data_chegada_cont, placeholder: 'Data de Emissão', :class => 'form-control' %>
+  </div> 
+
+  <div class="col-xs-2">
+    <%= f.search_field :data_recebimento_cont, placeholder: 'Data de Vencimento', :class => 'form-control' %>
+  </div>
+
+  <div class="col-xs-2">
+    <%= f.submit :class => 'btn btn-primary' %>
+  </div>
+  <% end %>  
+</div>
+
+<br>
+<br>
+<br>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -18,9 +53,12 @@
         <td><%= encomenda.tipo %></td>
         <td><%= encomenda.destinatario %></td>
         <td><%= encomenda.remetente %></td>
-        <td><%= encomenda.data_chegada.strftime("%d/%m/%Y") %></td>  
+        <td><%= encomenda.data_chegada.strftime("%d/%m/%Y") %></td> 
+        <% if (encomenda.data_recebimento != nil) %> 
         <td><%= encomenda.data_recebimento.strftime("%d/%m/%Y") %></td>
-
+        <% else %>
+        <td> - </td>
+        <% end %>
         <% if(encomenda.entregue == true)%>
         <td  bgcolor="dce775" ><%= 'Retirado' %></td>
         <% else %>

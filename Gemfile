@@ -35,6 +35,8 @@ gem 'twitter-bootstrap-rails'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'ransack'
+
+gem 'jquery-ui-rails' 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 #
