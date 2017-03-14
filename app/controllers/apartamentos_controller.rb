@@ -95,6 +95,6 @@ class ApartamentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def apartamento_params
-      params.require(:apartamento).permit(:local, :nome_proprietario, :cpf_proprietario, :nome_morador, :senha)
+      params.require(:apartamento).permit(:local, :nome_proprietario, :cpf_proprietario, :nome_morador, :matricula_iptu)
     end
 end
