@@ -1,0 +1,11 @@
+I"è(function() {
+  jQuery(function() {
+    $("a[rel~=popover], .has-popover").popover();
+    $("a[rel~=tooltip], .has-tooltip").tooltip();
+    return $('.cpf').mask('000.000.000-00', {
+      reverse: true
+    });
+  });
+
+}).call(this);
+:ET

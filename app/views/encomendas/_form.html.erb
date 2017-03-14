@@ -18,21 +18,21 @@
   <div class="form-group">
     <%= f.label "Tipo", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :tipo, :class => 'form-control' %>
+      <%= f.text_field :tipo, :class => 'form-control',:placeholder=>'Ex.. Carta Registrada ', :maxlength=>"30" %>
     </div>
     <%=f.error_span(:tipo) %>
   </div>
   <div class="form-group">
     <%= f.label "Destinatário", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :destinatario, :class => 'form-control' %>
+      <%= f.text_field :destinatario, :class => 'form-control',:placeholder=>'Ex.. Maria Silva', :maxlength=>"30" %>
     </div>
     <%=f.error_span(:destinatario) %>
   </div>
   <div class="form-group">
     <%= f.label "Remetente", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :remetente, :class => 'form-control' %>
+      <%= f.text_field :remetente, :class => 'form-control',:placeholder=>'Ex.. Banco', :maxlength=>"30" %>
     </div>
     <%=f.error_span(:remetente) %>
   </div>
@@ -57,7 +57,7 @@
   <div class="form-group">
     <%= f.label "Observação", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :obs, :class => 'form-control' %>
+      <%= f.text_field :obs, :class => 'form-control',:placeholder=>'Insira uma observação', :maxlength=>"50" %>
     </div>
     <%=f.error_span(:obs) %>
   </div>
