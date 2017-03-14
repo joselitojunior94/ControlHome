@@ -38,7 +38,7 @@
     <tr>
       <th><%= sort_link(@q, :local,'Bloco e Número', default_order: :desc)%></th>
       <th><%= sort_link(@q, :nome_proprietario,'Proprietário') %></th>
-      <th><%= model_class.human_attribute_name("CPF do Proprietário") %></th>
+      <th>CPF do Proprietário</th>
       <th><%= model_class.human_attribute_name("Morador Atual") %></th>
       <th><%= sort_link(@q, :created_at,'Criado em:') %></th>
     </tr>
