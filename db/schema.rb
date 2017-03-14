@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170301201139) do
+ActiveRecord::Schema.define(version: 20170314013414) do
 
   create_table "apartamentos", force: :cascade do |t|
     t.string   "local"
     t.string   "nome_proprietario"
-    t.integer  "cpf_proprietario"
+    t.string   "cpf_proprietario"
     t.string   "nome_morador"
     t.string   "senha"
     t.datetime "created_at",        null: false
