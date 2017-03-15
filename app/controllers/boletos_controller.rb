@@ -4,10 +4,7 @@ class BoletosController < ApplicationController
   # GET /boletos
   # GET /boletos.json
   def index
-   
     @apartamento = Apartamento.all
-    #@boletos = Boleto.all
-
     @q = Boleto.ransack(params[:q])
     @boletos = @q.result.includes(:apartamento)
   end

@@ -5,7 +5,7 @@
   <%= search_form_for @q do |f|%>
 
   <div class="col-xs-2">
-    <%= f.search_field :local_cont, placeholder: 'Bloco e Número', :class => 'form-control' %>
+    <%= f.search_field :local_cont, placeholder: 'Bloco e Número', :class => 'form-control local' %>
   </div>
 
   <div class="col-xs-2">
@@ -14,7 +14,7 @@
   </div> 
   
   <div class="col-xs-2">
-    <%= f.search_field :cpf_proprietario_cont, placeholder: 'CPF do Proprietário', :class => 'form-control' %>
+    <%= f.search_field :cpf_proprietario_cont, placeholder: 'CPF do Proprietário', :class => 'form-control cpf' %>
   </div> 
   
   <div class="col-xs-2">
@@ -22,7 +22,7 @@
   </div> 
 
   <div class="col-xs-2">
-    <%= f.search_field :matricula_iptu_cont, placeholder: 'Matrícula IPTU', :class => 'form-control' %>
+    <%= f.search_field :matricula_iptu_cont, placeholder: 'Matrícula IPTU', :class => 'form-control iptu' %>
   </div>
 
   <div class="col-xs-1">

@@ -1,10 +1,9 @@
 <%= form_for @apartamento, :html => { :class => "form-horizontal apartamento" } do |f| %>
 
-
   <div class="form-group">
     <%= f.label "Bloco e Número", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :local, :class => 'form-control',:placeholder=>'A 1004', :maxlength=>"6" %>
+      <%= f.text_field :local, :class => 'form-control local',:placeholder=>'A 0000', :maxlength=>"6" %>
       <%=f.error_span(:local) %>
     </div>
     
@@ -23,7 +22,7 @@
   <div class="form-group">
     <%= f.label "CPF do Proprietário", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :cpf_proprietario,:class => 'form-control cpf', :placeholder=>'999.999.999-99', :maxlength=>"14" %>
+      <%= f.text_field :cpf_proprietario, :id => 'cpf', :class => 'form-control cpf', :placeholder=>'000.000.000-00', :maxlength=>"14" %>
       <%=f.error_span(:cpf_proprietario) %>
     </div>
   </div>
@@ -31,7 +30,7 @@
   <div class="form-group">
     <%= f.label "Nº Matrícula IPTU", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :matricula_iptu, :class => 'form-control', :placeholder=>'0000000000000-00', :maxlength=>"16" %>
+      <%= f.text_field :matricula_iptu, :class => 'form-control iptu', :placeholder=>'0000000000000-00', :maxlength=>"16" %>
       <%=f.error_span(:matricula_iptu) %>
     </div>
     

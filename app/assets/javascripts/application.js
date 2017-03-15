@@ -10,8 +10,25 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery3	
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+//= require maskedinput
+
+$(document).on('turbolinks:load', function() {
+
+  $(document).ready(function() {
+  	$('.local').mask('a 9999');
+  	$('.cpf').mask('999.999.999-99'); 
+  	$('.iptu').mask('9999999999999-99'); 
+  });
+
+});
+
+
+
+
+
+

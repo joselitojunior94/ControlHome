@@ -44,7 +44,7 @@
   <div class="form-group">
     <%= f.label "Código", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :codigo, :class => 'form-control',:placeholder=>' 000000000', :maxlength=>"9" %>
+      <%= f.text_field :codigo, :id => 'codigo', :class => 'form-control',:placeholder=>' 000000000', :maxlength=>"9" %>
     </div>
     <%=f.error_span(:codigo) %>
   </div>
