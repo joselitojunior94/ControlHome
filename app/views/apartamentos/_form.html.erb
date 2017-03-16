@@ -3,7 +3,7 @@
   <div class="form-group">
     <%= f.label "Bloco e Número", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :local, :class => 'form-control local',:placeholder=>'A 0000', :maxlength=>"6" %>
+      <%= f.text_field :local, :class => 'form-control local',:placeholder=>'A 0000', :maxlength=>"6", :required => true %>
       <%=f.error_span(:local) %>
     </div>
     
@@ -13,7 +13,7 @@
   <div class="form-group">
     <%= f.label "Nome do Proprietário", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :nome_proprietario, :class => 'form-control', :placeholder=>'Ex.. José da Silva', :maxlength=>"30" %>
+      <%= f.text_field :nome_proprietario, :class => 'form-control', :placeholder=>'Ex.. José da Silva', :maxlength=>"30", :required => true %>
       <%=f.error_span(:nome_proprietario) %>
     </div>
 
@@ -22,7 +22,7 @@
   <div class="form-group">
     <%= f.label "CPF do Proprietário", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :cpf_proprietario, :id => 'cpf', :class => 'form-control cpf', :placeholder=>'000.000.000-00', :maxlength=>"14" %>
+      <%= f.text_field :cpf_proprietario, :id => 'cpf', :class => 'form-control cpf', :placeholder=>'000.000.000-00', :maxlength=>"14", :required => true %>
       <%=f.error_span(:cpf_proprietario) %>
     </div>
   </div>
@@ -30,7 +30,7 @@
   <div class="form-group">
     <%= f.label "Nº Matrícula IPTU", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :matricula_iptu, :class => 'form-control iptu', :placeholder=>'0000000000000-00', :maxlength=>"16" %>
+      <%= f.text_field :matricula_iptu, :class => 'form-control iptu', :placeholder=>'0000000000000-00', :maxlength=>"16", :required => true %>
       <%=f.error_span(:matricula_iptu) %>
     </div>
     
@@ -39,7 +39,7 @@
   <div class="form-group">
     <%= f.label "Nome do Morador Atual", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :nome_morador, :class => 'form-control',:placeholder=>'Ex.. Ana Maria', :maxlength=>"30" %>
+      <%= f.text_field :nome_morador, :class => 'form-control',:placeholder=>'Ex.. Ana Maria', :maxlength=>"30", :required => true %>
       <%=f.error_span(:nome_morador) %>
     </div> 
   </div>

@@ -4,11 +4,11 @@
   <%= search_form_for @q do |f|%>
 
   <div class="col-xs-2">
-    <%= f.search_field :local_cont, placeholder: 'Local', :class => 'form-control' %>
+    <%= f.search_field :local_cont, placeholder: 'Local', :class => 'form-control local_g' %>
   </div>
 
   <div class="col-xs-2">
-    <%= f.search_field :apartamento_local_cont, placeholder: 'Apartamento', :class => 'form-control' %>
+    <%= f.search_field :apartamento_local_cont, placeholder: 'Apartamento', :class => 'form-control local' %>
   </div>
 
   <div class="col-xs-2">
@@ -16,11 +16,11 @@
   </div> 
   
   <div class="col-xs-2">
-    <%= f.search_field :placa_carro_cont, placeholder: 'Placa', :class => 'form-control' %>
+    <%= f.search_field :placa_carro_cont, placeholder: 'Placa', :class => 'form-control placa' %>
   </div> 
 
   <div class="col-xs-2">
-    <%= f.search_field :created_at_cont, placeholder: 'Data de Criação', :class => 'form-control' %>
+    <%= f.search_field :created_at_cont, placeholder: 'Data de Criação', :class => 'form-control data' %>
   </div>
 
   <div class="col-xs-2">

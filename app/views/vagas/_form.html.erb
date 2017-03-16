@@ -24,7 +24,7 @@
   <div class="form-group">
     <%= f.label "Localização", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :local, :class => 'form-control',:placeholder=>'G1 01', :maxlength=>"6" %>
+      <%= f.text_field :local, :class => 'form-control local_g',:placeholder=>'G0 000', :maxlength=>"6", :required => true %>
     </div>
     <%=f.error_span(:local) %>
   </div>
@@ -45,21 +45,21 @@
   <div class="form-group">
     <%= f.label "Modelo ", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :modelo_carro, :class => 'form-control',:placeholder=>'Fusca', :maxlength=>"30" %>
+      <%= f.text_field :modelo_carro, :class => 'form-control',:placeholder=>'Fusca', :maxlength=>"30", :required => true %>
     </div>
     <%=f.error_span(:modelo_carro) %>
   </div>
   <div class="form-group">
     <%= f.label "Cor", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :car_carro, :class => 'form-control',:placeholder=>'Amarelo', :maxlength=>"20" %>
+      <%= f.text_field :car_carro, :class => 'form-control',:placeholder=>'Amarelo', :maxlength=>"20", :required => true %>
     </div>
     <%=f.error_span(:car_carro) %>
   </div>
   <div class="form-group">
     <%= f.label "Placa", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :placa_carro, :class => 'form-control',:placeholder=>'AAA-0000', :maxlength=>"8" %>
+      <%= f.text_field :placa_carro, :class => 'form-control placa',:placeholder=>'AAA-0000', :maxlength=>"8", :required => true %>
     </div>
     <%=f.error_span(:placa_carro) %>
   </div>

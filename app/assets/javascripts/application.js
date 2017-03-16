@@ -22,9 +22,12 @@ $(document).on('turbolinks:load', function() {
   $(document).ready(function() {
   	$('.local').mask('a 9999');
   	$('.cpf').mask('999.999.999-99'); 
-  	$('.iptu').mask('9999999999999-99'); 
+  	$('.iptu').mask('9999999999999-99');
+  	$('.data').mask('99/99/9999');
+  	$('.money2').mask('999,99');
+  	$('.local_g').mask('a9 999');
+  	$('.placa').mask('aaa-9999');
   });
-
 });
 
 

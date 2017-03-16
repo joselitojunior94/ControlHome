@@ -5,7 +5,7 @@
   <%= search_form_for @q do |f|%>
 
   <div class="col-xs-2">
-    <%= f.search_field :apartamento_local_cont, placeholder: 'Apartamento', :class => 'form-control' %>
+    <%= f.search_field :apartamento_local_cont, placeholder: 'Apartamento', :class => 'form-control local' %>
   </div>
 
   <div class="col-xs-2">
@@ -18,11 +18,11 @@
   </div> 
   
   <div class="col-xs-2">
-    <%= f.search_field :data_chegada_cont, placeholder: 'Data de Emissão', :class => 'form-control' %>
+    <%= f.search_field :data_chegada_cont, placeholder: 'Data de Emissão', :class => 'form-control data' %>
   </div> 
 
   <div class="col-xs-2">
-    <%= f.search_field :data_recebimento_cont, placeholder: 'Data de Vencimento', :class => 'form-control' %>
+    <%= f.search_field :data_recebimento_cont, placeholder: 'Data de Vencimento', :class => 'form-control data' %>
   </div>
 
   <div class="col-xs-2">
