@@ -12,10 +12,12 @@
 //
 //= require jquery3	
 //= require jquery_ujs
+//= require jquery-ui
 //= require twitter/bootstrap
 //= require turbolinks
 //= require maskedinput
 //= require bootstrap-datepicker
+//= require jquery-ui/widgets/datepicker
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
@@ -28,10 +30,21 @@ $(document).on('turbolinks:load', function() {
   	$('.money2').mask('999,99');
   	$('.local_g').mask('a9 999');
   	$('.placa').mask('aaa-9999');
-    $('.datepicker').datepicker();
-    $('.datepicker').on('changeDate', function(ev){
-    $(this).datepicker('hide');
-});
+    
+    $('.datepicker').datepicker({
+      dateFormat: "dd/mm/yy",
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            autoclose: true,
+            changeMonth: true,
+            changeYear: true,
+            todayHighlight: true,
+            language: 'pt-BR',
+            position: "bottom right",
+            origin: "top left"
+    });
+    
+    
   });
 });
 
