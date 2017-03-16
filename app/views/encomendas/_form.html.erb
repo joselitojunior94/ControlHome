@@ -41,7 +41,7 @@
     <%= f.label "Data de chegada", :class => 'control-label col-lg-2' %>
   
     <div class="col-lg-10">
-     <%= f.date_select :data_chegada, :class => 'form-control' %>
+     <%= f.text_field :data_chegada, :class => 'form-control datepicker' %>
     </div>
     <%=f.error_span(:data_chegada) %>
   </div>
@@ -78,7 +78,7 @@
   <div class="form-group">
     <%= f.label "Data de Recebimento", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.date_select :data_recebimento, :class => 'form-control ' %>
+      <%= f.text_field :data_recebimento, :class => 'form-control datepicker' %>
     </div>
     <%=f.error_span(:data_recebimento) %>
   </div>

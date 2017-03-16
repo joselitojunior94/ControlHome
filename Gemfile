@@ -34,9 +34,12 @@ gem 'twitter-bootstrap-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'bootstrap-datepicker-rails'
+
 gem 'ransack'
 
 gem 'jquery-ui-rails' 
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 #

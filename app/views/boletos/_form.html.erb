@@ -27,7 +27,7 @@
     <%= f.label "Data de Emissão", :class => 'control-label col-lg-2' %>
   
     <div class="col-lg-10">
-     <%= f.date_select :data_emissao, :class => 'form-control ' %>
+     <%= f.text_field :data_emissao, :class => 'form-control date datepicker' %>
     </div>
     <%=f.error_span(:data_emissao) %>
   </div>
@@ -36,7 +36,7 @@
     <%= f.label "Data de Vencimento", :class => 'control-label col-lg-2' %>
     
     <div class="col-lg-10">
-     <%= f.date_select :data_vencimento, :class => 'form-control' %>
+     <%= f.text_field :data_vencimento, :class => 'form-control date datepicker' %>
     </div>
     <%=f.error_span(:data_vencimento) %>
   </div>

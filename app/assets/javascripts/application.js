@@ -14,8 +14,9 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
-//= require_tree .
 //= require maskedinput
+//= require bootstrap-datepicker
+//= require_tree .
 
 $(document).on('turbolinks:load', function() {
 
@@ -27,6 +28,10 @@ $(document).on('turbolinks:load', function() {
   	$('.money2').mask('999,99');
   	$('.local_g').mask('a9 999');
   	$('.placa').mask('aaa-9999');
+    $('.datepicker').datepicker();
+    $('.datepicker').on('changeDate', function(ev){
+    $(this).datepicker('hide');
+});
   });
 });
 
