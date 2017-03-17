@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170314013952) do
+ActiveRecord::Schema.define(version: 20170316183156) do
 
   create_table "apartamentos", force: :cascade do |t|
     t.string   "local"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170314013952) do
 
   create_table "boletos", force: :cascade do |t|
     t.integer  "apartamento_id"
-    t.integer  "codigo"
+    t.string   "codigo"
     t.float    "valor_boleto"
     t.float    "juros_boleto"
     t.date     "data_emissao"

@@ -30,6 +30,7 @@ $(document).on('turbolinks:load', function() {
   	$('.money2').mask('999,99');
   	$('.local_g').mask('a9 999');
   	$('.placa').mask('aaa-9999');
+    $('.banco').mask('999999999999999999999999999999999999999999');
     
     $('.datepicker').datepicker({
       dateFormat: "dd/mm/yy",
