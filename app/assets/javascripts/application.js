@@ -41,8 +41,6 @@ $(document).on('turbolinks:load', function() {
             changeYear: true,
             todayHighlight: true,
             language: 'pt-BR',
-            position: "bottom right",
-            origin: "top left"
     });
     
     

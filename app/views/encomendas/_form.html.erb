@@ -67,14 +67,6 @@
     <h1>Dados de Recebimento</h1>
   </div>
 
-   <div class="form-group">
-    <%= f.label "Entregue", :class => 'control-label col-lg-2' %>
-    <div class="col-lg-1">
-      <%= f.check_box :entregue, :class => 'form-control' %>
-    </div>
-  </div>
- 
-
   <div class="form-group">
     <%= f.label "Data de Recebimento", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
@@ -82,6 +74,10 @@
     </div>
     <%=f.error_span(:data_recebimento) %>
   </div>
+
+   <% if(:data_recebimento)%>
+   <%= puts("entrei") %>
+   <% end %>
   
   <% end %>
   <div class="form-group">

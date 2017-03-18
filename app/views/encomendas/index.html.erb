@@ -18,11 +18,11 @@
   </div> 
   
   <div class="col-xs-2">
-    <%= f.search_field :data_chegada_cont, placeholder: 'Data de Emissão', :class => 'form-control data datepicker' %>
+    <%= f.search_field :data_chegada_cont, placeholder: 'Data de Chegada', :class => 'form-control data datepicker' %>
   </div> 
 
   <div class="col-xs-2">
-    <%= f.search_field :data_recebimento_cont, placeholder: 'Data de Vencimento', :class => 'form-control data datepicker' %>
+    <%= f.search_field :data_recebimento_cont, placeholder: 'Data de Recebimento', :class => 'form-control data datepicker' %>
   </div>
 
   <div class="col-xs-2">
@@ -59,7 +59,7 @@
         <% else %>
         <td> - </td>
         <% end %>
-        <% if(encomenda.entregue == true)%>
+        <% if(encomenda.data_recebimento != nil)%>
         <td  bgcolor="dce775" ><%= 'Retirado' %></td>
         <% else %>
         <td bgcolor="ff9e80" ><%= 'Pendente' %></td>

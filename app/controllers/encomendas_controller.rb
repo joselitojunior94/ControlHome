@@ -49,7 +49,7 @@ class EncomendasController < ApplicationController
   # PATCH/PUT /encomendas/1.json
   def update
     respond_to do |format|
-      if @encomenda.update(encomenda_params)
+      if @encomenda.update(encomenda_params) 
         format.html { redirect_to @encomenda, notice: 'Encomenda foi atualizada!' }
         format.json { render :show, status: :ok, location: @encomenda }
       else
