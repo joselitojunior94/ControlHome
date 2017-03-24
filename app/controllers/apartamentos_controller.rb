@@ -1,14 +1,13 @@
+require 'FillingBoletos'
+
 class ApartamentosController < ApplicationController
   before_action :set_apartamento, only: [:show, :edit, :update, :destroy]
 
   # GET /apartamentos
   # GET /apartamentos.json
   def index
-    @q = Apartamento.ransack(params[:q])
-    
+    @q = Apartamento.ransack(params[:q])  
     @apartamentos = @q.result
-
-
   end
 
   # GET /apartamentos/1
@@ -34,25 +33,10 @@ class ApartamentosController < ApplicationController
 
     respond_to do |format|
       if @apartamento.save
-        d = DateTime.now.month
-        for i in d..12
-          boleto = Boleto.new
-          boleto.apartamento_id = @apartamento.id
-          if(i == 12)
-            boleto.data_emissao = DateTime.new(DateTime.now.year, 12, 2, 0, 0, 0)
-            boleto.data_vencimento = DateTime.new((DateTime.now.year+1), 1, 2, 0, 0, 0)
-            boleto.codigo = String(Random.new_seed) + '0000'
-          else
-            boleto.data_emissao = DateTime.new(DateTime.now.year, i, 2, 0, 0, 0) 
-            boleto.data_vencimento = DateTime.new(DateTime.now.year, (i+1), 2, 0, 0, 0)
-            #boleto.codigo = Integer(@apartamento.id+DateTime.now.year+i+(i+1)*10000000)
-            boleto.codigo = String(Random.new_seed) + '0000'
-          end
-
-          boleto.created_at = DateTime.now
-          boleto.updated_at = DateTime.now
-          boleto.save
-        end
+        #Template Method
+        f = FillingBoletos.new
+        f.fill(@apartamento.id)
+        
         format.html { redirect_to @apartamento, notice: 'Novo Apartamento foi adicionado com sucesso!' }
         format.json { render :show, status: :created, location: @apartamento }
       else
