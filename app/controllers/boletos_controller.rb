@@ -1,29 +1,34 @@
+require 'ApartamentoSingleton'
+require 'SearchApt'
+
 class BoletosController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_boleto, only: [:show, :edit, :update, :destroy]
 
   # GET /boletos
   # GET /boletos.json
   def index
-    @apartamento = Apartamento.all
     @q = Boleto.ransack(params[:q])
     @boletos = @q.result.includes(:apartamento)
+    ApartamentoSingleton.instance.returnApartamentos
   end
 
   # GET /boletos/1
   # GET /boletos/1.json
   def show
-     @apartamento = Apartamento.all
+     ApartamentoSingleton.instance.returnApartamentos
   end
 
   # GET /boletos/new
   def new
     @boleto = Boleto.new
-    @apartamento = Apartamento.all
+    ApartamentoSingleton.instance.returnApartamentos
   end
 
   # GET /boletos/1/edit
   def edit
-    @apartamento = Apartamento.all
+    #@apartamento = Apartamento.all
+    ApartamentoSingleton.instance.returnApartamentos
   end
 
   # POST /boletos

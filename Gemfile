@@ -41,7 +41,8 @@ gem 'bootstrap-datepicker-rails'
 gem 'ransack'
 
 gem 'jquery-ui-rails' 
-
+# Flexible authentication solution for Rails with Warden. 
+gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 #

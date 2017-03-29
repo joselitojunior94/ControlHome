@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  	
+  devise_for :users
+  root "boletos#index"
+  
+
   resources :apartamentos
   resources :boletos
   resources :vagas

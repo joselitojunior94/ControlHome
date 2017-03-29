@@ -1,32 +1,39 @@
+require 'ApartamentoSingleton'
+
 class EncomendasController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_encomenda, only: [:show, :edit, :update, :destroy]
   # GET /encomendas
   # GET /encomendas.json
   def index
-    #@encomendas = Encomenda.all
-    @apartamento = Apartamento.all
+    @encomendas = Encomenda.all
 
     @q = Encomenda.ransack(params[:q])
     @encomendas = @q.result.includes(:apartamento)
-
+    puts('----------------------------------------------------')
+    puts('Exemplo Facade')
+    puts(@encomendas.where(data_recebimento: nil).take)
+    puts('-----------------------------------------------------')
     #@apartamentos = @q.result
   end
 
   # GET /encomendas/1
   # GET /encomendas/1.json
   def show
-    @apartamento = Apartamento.all
+    ApartamentoSingleton.instance.returnApartamentos
+
+
   end
 
   # GET /encomendas/new
   def new
     @encomenda = Encomenda.new
-    @apartamento = Apartamento.all
+    ApartamentoSingleton.instance.returnApartamentos
   end
 
   # GET /encomendas/1/edit
   def edit
-    @apartamento = Apartamento.all
+    ApartamentoSingleton.instance.returnApartamentos
   end
 
   # POST /encomendas

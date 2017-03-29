@@ -1,4 +1,5 @@
-class BoletoYearType
+#require 'AddBoleto'
+class BoletoYearType < AddBoleto
 	def atrib
 		atribBoletoNextYear
 		atribBoletoCurrentYear

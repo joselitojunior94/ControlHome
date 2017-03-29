@@ -1,5 +1,7 @@
 <%= form_for @apartamento, :html => { :class => "form-horizontal apartamento" } do |f| %>
 
+<%= render :partial => 'navbar' %>
+
   <div class="form-group">
     <%= f.label "Bloco e Número", :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">

@@ -1,0 +1,21 @@
+<div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand"><%= image_tag("logo.jpg", :alt => "logo", size: "50") %></a>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">
+            <% if current_user.apt_login_id == nil%>
+            <li><%= link_to "Apartamentos", "/apartamentos"  %></li>
+            <% end %>
+            <li><%= link_to "Vagas de Garagem", "/vagas"  %></li>
+            <li><%= link_to "Central de Encomendas", "/encomendas"  %></li>
+            <li><%= link_to "Financeiro", "/boletos"  %></li>
+            <li><%= link_to "Sair", destroy_user_session_path, method: :delete %> </li>
+          </ul>
+        </div>
+      </div>
+    </div>

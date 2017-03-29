@@ -1,6 +1,7 @@
 <%- model_class = Encomenda -%>
 
 <br>
+<%= render :partial => 'navbar' %>
 <div class="form-group">   
   <%= search_form_for @q do |f|%>
 
@@ -49,7 +50,7 @@
   <tbody>
     <% @encomendas.each do |encomenda| %>
       <tr>
-        <td><%= encomenda.apartamento.local %></td>
+        <% if (Apartamento.find(current_user.apt_login_id).local == encomenda.apartamento.local) or (current_user.apt_login_id == nil)%>
         <td><%= encomenda.tipo %></td>
         <td><%= encomenda.destinatario %></td>
         <td><%= encomenda.remetente %></td>
@@ -64,8 +65,10 @@
         <% else %>
         <td bgcolor="ff9e80" ><%= 'Pendente' %></td>
         <% end %>
-        
+        <% if (current_user.apt_login_id == nil) %>
         <td>
+
+
           <%= link_to t('.show', :default => t("Mais")),
                       encomenda_path(encomenda), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.edit', :default => t("Editar")),
@@ -77,12 +80,15 @@
                       :class => 'btn btn-xs btn-danger' %>
         </td>
       </tr>
+      <% end %>
+      <% end %>
     <% end %>
   </tbody>
 </table>
-
+<% if (current_user.apt_login_id == nil) %>
 <% if(@apartamento != []) %>
 <%= link_to t('.new', :default => t("Adicionar Nova Encomenda")),
             new_encomenda_path,
             :class => 'btn btn-primary' %>
+<% end %>
 <% end %>

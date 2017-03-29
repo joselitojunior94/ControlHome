@@ -1,9 +1,10 @@
 <%- model_class = Apartamento -%>
-<br>
 
+<br>
+<%= render :partial => 'navbar' %>  
+<% if (current_user.apt_login_id == nil) %>
 <div class="form-group">   
   <%= search_form_for @q do |f|%>
-
   <div class="col-xs-2">
     <%= f.search_field :local_cont, placeholder: 'Bloco e Número', :class => 'form-control local' %>
   </div>
@@ -72,3 +73,4 @@
 <%= link_to t('.new', :default => t("Adicionar Novo Apartamento")),
             new_apartamento_path,
             :class => 'btn btn-primary' %>
+<% end %>

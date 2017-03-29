@@ -1,5 +1,6 @@
 <%- model_class = Boleto -%>
 <br>
+<%= render :partial => 'navbar' %>
 <div class="form-group">   
   <%= search_form_for @q do |f|%>
 
@@ -40,7 +41,6 @@
     <tr>
       <th><%= model_class.human_attribute_name("Apartamento") %></th>
       <th><%= model_class.human_attribute_name("Código do Boleto") %></th>
-      
       <th><%= model_class.human_attribute_name("Data de Emissão") %></th>
       <th><%= model_class.human_attribute_name("Data de Vencimento") %></th>
       <th><%= model_class.human_attribute_name("Status") %></th>
@@ -50,6 +50,7 @@
       <% @boletos.each do |boleto| %>
       
       <tr>
+       <% if (current_user.apt_login_id == nil) or (Apartamento.find(current_user.apt_login_id).local == boleto.apartamento.local)%>  
         <td><%= boleto.apartamento.local %></td>
         <td><%= boleto.codigo %></td>
         <td><%= boleto.data_emissao.strftime("%d/%m/%Y")%></td>
@@ -59,10 +60,12 @@
         <% else %>
         <td bgcolor="ff9e80" ><%= 'Pendente' %></td>
         <% end %>
+
         <td>
-       
+        
           <%= link_to t('.show', :default => t("Mostrar")),
                       boleto_path(boleto), :class => 'btn btn-default btn-xs' %>
+          <% if (current_user.apt_login_id == nil) %>
           <%= link_to t('.edit', :default => t("Editar")),
                       edit_boleto_path(boleto), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("Apagar")),
@@ -70,13 +73,17 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Você tem certeza?')) },
                       :class => 'btn btn-xs btn-danger' %>
+        <% end %>
         </td>
       </tr>
+      <%end%>
   </tbody>
   <% end %>
 </table>
+<% if (current_user.apt_login_id == nil) %>
 <% if(@apartamento != []) %>
 <%= link_to t('.new', :default => t("Adicionar Novo Boleto")),
             new_boleto_path,
             :class => 'btn btn-primary' %>
+<% end %>
 <% end %>

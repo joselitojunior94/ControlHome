@@ -1,6 +1,8 @@
 require 'FillingBoletos'
+require 'AddUsers'
 
 class ApartamentosController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_apartamento, only: [:show, :edit, :update, :destroy]
 
   # GET /apartamentos
@@ -8,6 +10,8 @@ class ApartamentosController < ApplicationController
   def index
     @q = Apartamento.ransack(params[:q])  
     @apartamentos = @q.result
+    puts('User id')
+    puts(current_user.id)
   end
 
   # GET /apartamentos/1
@@ -36,6 +40,9 @@ class ApartamentosController < ApplicationController
         #Template Method
         f = FillingBoletos.new
         f.fill(@apartamento.id)
+
+        u = AddUsers.new
+        u.creatingUser(@apartamento)
         
         format.html { redirect_to @apartamento, notice: 'Novo Apartamento foi adicionado com sucesso!' }
         format.json { render :show, status: :created, location: @apartamento }

@@ -1,30 +1,30 @@
 class VagasController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_vaga, only: [:show, :edit, :update, :destroy]
 
   # GET /vagas
   # GET /vagas.json
   def index 
-    @apartamento = Apartamento.all
-
     @q = Vaga.ransack(params[:q])
     @vagas = @q.result.includes(:apartamento)
+    #ApartamentoSingleton.instance.returnApartamentos
   end
 
   # GET /vagas/1
   # GET /vagas/1.json
   def show
-     @apartamento = Apartamento.all
+     ApartamentoSingleton.instance.returnApartamentos
   end
 
   # GET /vagas/new
   def new
     @vaga = Vaga.new
-    @apartamento = Apartamento.all
+    ApartamentoSingleton.instance.returnApartamentos
   end
 
   # GET /vagas/1/edit
   def edit
-    @apartamento = Apartamento.all
+    ApartamentoSingleton.instance.returnApartamentos
   end
 
   # POST /vagas

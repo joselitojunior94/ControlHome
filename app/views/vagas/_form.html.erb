@@ -1,5 +1,5 @@
 <%= form_for @vaga, :html => { :class => "form-horizontal vaga" } do |f| %>
-
+<%= render :partial => 'navbar' %>
   <% if @vaga.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
@@ -31,7 +31,7 @@
   <div class="form-group">
     <%= f.label :apartamento_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.select :apartamento_id, options_for_select(@apartamento.map{ |c| [c.local, c.id, {'local'=>c.local}] }, apartamento_id = f.object.apartamento_id) %>
+      <%= f.select :apartamento_id, options_for_select(ApartamentoSingleton.instance.returnApartamentos.map{ |c| [c.local, c.id, {'local'=>c.local}] }, apartamento_id = f.object.apartamento_id) %>
     </div>
     <%=f.error_span(:apartamento_id) %>
   </div>

@@ -1,4 +1,5 @@
 <%- model_class = Boleto -%>
+<%= render :partial => 'navbar' %>
 <div class="page-header">
  <h1>Dados do Apartamento <%= @boleto.apartamento.local%></h1>
 </div>
@@ -29,6 +30,7 @@
 
 <%= link_to t('.back', :default => t("Voltar")),
               boletos_path, :class => 'btn btn-default'  %>
+<% if (current_user.apt_login_id == nil) %>
 <% if(@boleto.status != true)%>
 <%= link_to t('.edit', :default => t("Editar")),
               edit_boleto_path(@boleto), :class => 'btn btn-default' %>
@@ -38,3 +40,4 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+<% end %>
